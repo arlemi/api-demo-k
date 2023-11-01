@@ -1,0 +1,1138 @@
+{
+	"info": {
+		"_postman_id": "b409352f-5042-4a35-bb01-f8ab96442161",
+		"name": "Tests",
+		"description": "The Flight Status API provides flight information like: the flight route, per leg the departure and arrival information, airport locations related to the arrival and departure times, information on irregularities (delay, cancellation, etc.)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "28650973-b409352f-5042-4a35-bb01-f8ab96442161"
+	},
+	"item": [
+		{
+			"name": "flights",
+			"item": [
+				{
+					"name": "{flightDate}",
+					"item": [
+						{
+							"name": "get flight status details",
+							"id": "7fc2b9cb-447e-4bcc-9447-25739b4cf3f4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									},
+									{
+										"key": "Accept",
+										"value": "application/hal+json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights",
+										":flightDate"
+									],
+									"query": [
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "expand with additional flight information",
+											"key": "expand",
+											"value": "trajectory"
+										}
+									],
+									"variable": [
+										{
+											"key": "flightDate",
+											"value": "dolor incididunt est"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "fb14db7d-a566-4095-94a7-8fbb45326014",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+												"key": "Accept-Language",
+												"value": "en-GB"
+											},
+											{
+												"key": "Accept",
+												"value": "application/hal+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"flights",
+												":flightDate"
+											],
+											"query": [
+												{
+													"description": "consumer Host",
+													"key": "consumerHost",
+													"value": "dolor incididunt est"
+												},
+												{
+													"description": "expand with additional flight information",
+													"key": "expand",
+													"value": "trajectory"
+												}
+											],
+											"variable": [
+												{
+													"key": "flightDate"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/hal+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"airline\": {\n    \"code\": \"ut laboris\",\n    \"name\": \"commodo dolor ut occaecat\"\n  },\n  \"baseProvinceIndicator\": \"in ut\",\n  \"codeShareRelations\": [\n    {\n      \"airline\": {\n        \"code\": \"id reprehenderit eu irure\",\n        \"name\": \"sint eu deserunt ullamco\"\n      },\n      \"code\": \"sunt enim in\",\n      \"flightScheduleDate\": \"1975-05-25\",\n      \"marketingFlightNumber\": -25024943,\n      \"operationalSuffix\": \"deserunt Duis\",\n      \"saleableVersion\": \"minim cillum occaecat ex\",\n      \"type\": \"sed elit in et\"\n    },\n    {\n      \"airline\": {\n        \"code\": \"est eiusmod ut consequat\",\n        \"name\": \"veniam nisi aute\"\n      },\n      \"code\": \"reprehende\",\n      \"flightScheduleDate\": \"2011-02-18\",\n      \"marketingFlightNumber\": 1947022,\n      \"operationalSuffix\": \"do esse irure\",\n      \"saleableVersion\": \"laborum dolor minim qui\",\n      \"type\": \"l\"\n    }\n  ],\n  \"errors\": [\n    {\n      \"action\": {\n        \"hostPrefix\": \"velit Ut fugiat ut Duis\",\n        \"href\": \"dolor\",\n        \"profile\": \"ea sint enim\",\n        \"templated\": false,\n        \"type\": \"proident enim\"\n      },\n      \"code\": \"fugiat ut sin\",\n      \"description\": \"qui nisi enim\",\n      \"name\": \"nulla ul\",\n      \"severity\": \"ERROR\"\n    },\n    {\n      \"action\": {\n        \"hostPrefix\": \"culpa qui\",\n        \"href\": \"sed incididunt officia sit\",\n        \"profile\": \"dolore minim quis nostrud\",\n        \"templated\": false,\n        \"type\": \"commodo Duis\"\n      },\n      \"code\": \"veniam\",\n      \"description\": \"in in sint\",\n      \"name\": \"veniam\",\n      \"severity\": \"INFO\"\n    }\n  ],\n  \"flightDetailsBlocked\": true,\n  \"flightLegs\": [\n    {\n      \"aircraft\": {\n        \"cabinCrewEmployer\": \"reprehenderit\",\n        \"cockpitCrewEmployer\": \"nostrud ad\",\n        \"operationalConfiguration\": \"commodo ullamco esse\",\n        \"ownerAirlineCode\": \"dolor Duis\",\n        \"ownerAirlineName\": \"consequat nulla fugiat\",\n        \"physicalFreightConfiguration\": \"dolor\",\n        \"physicalPaxConfiguration\": \"anim nostrud commodo pariatur\",\n        \"registration\": \"quis aute occaecat do\",\n        \"saleableConfiguration\": \"consequat laborum in dolore\",\n        \"subFleetCodeId\": \"eu Excepteur deserunt do adipisicing\",\n        \"typeCode\": \"sed aliquip veniam\",\n        \"typeName\": \"sed anim cillum ut\",\n        \"wifiEnabled\": \"aute\"\n      },\n      \"arrivalDateTimeDifference\": \"pariatur commodo \",\n      \"arrivalInformation\": {\n        \"airport\": {\n          \"city\": {\n            \"code\": \"in sed\",\n            \"country\": {\n              \"areaCode\": \"exercitation sit Exce\",\n              \"code\": \"veniam Lorem labore ut\",\n              \"euCountry\": \"Excepteur officia adipisicing Ut amet\",\n              \"euroCountry\": \"ullamco dolore officia\",\n              \"name\": \"sed nostrud\",\n              \"nameLangTranl\": \"aliqua mollit occaecat\"\n            },\n            \"name\": \"eu officia\",\n            \"nameLangTranl\": \"tempor commodo laborum\"\n          },\n          \"code\": \"aute et adipisicing\",\n          \"location\": {\n            \"altitude\": -90619436,\n            \"latitude\": 23360191.33440663,\n            \"longitude\": -88830429.78131157\n          },\n          \"name\": \"ea enim labore\",\n          \"nameLangTranl\": \"quis ipsum enim ex\",\n          \"places\": {\n            \"aerogareCode\": \"magna dolor labore et\",\n            \"arrivalHall\": [\n              \"reprehenderit commodo sit\",\n              \"Lorem deserunt amet\"\n            ],\n            \"arrivalPositionPier\": \"ad dolor dolore\",\n            \"arrivalPositionTerminal\": \"non\",\n            \"arrivalTerminal\": \"minim est exercitation\",\n            \"baggageBelt\": [\n              \"irure\",\n              \"Ut aute\"\n            ],\n            \"disembarkingAerogare\": \"ut amet in\",\n            \"disembarkingBusQuantity\": \"do veniam\",\n            \"disembarkingContactType\": \"non consectetur fugiat qui\",\n            \"firstBagOnBeltTime\": \"1997-08-26T15:47:27.850Z\",\n            \"flightSecurityLevel\": \"eiusmod fugiat\",\n            \"gateNumber\": [\n              \"in enim\",\n              \"esse dolore deserunt\"\n            ],\n            \"lastBagOnBeltTime\": \"1972-10-30T01:22:16.119Z\",\n            \"parkingPosition\": \"culpa anim\",\n            \"parkingPositionCustomStatus\": \"nisi reprehenderit laborum non\",\n            \"parkingPositionType\": \"dolor eu enim\",\n            \"pierCode\": \"occaecat labore ut voluptate\",\n            \"terminalCode\": \"deserunt nulla irure\"\n          }\n        },\n        \"landingRunwayCode\": \"fugiat quis Lorem Ut\",\n        \"priorityIndicator\": \"Ut labore in ea\",\n        \"times\": {\n          \"actual\": \"1977-03-30T01:08:50.237Z\",\n          \"actualTakeOffTime\": \"1943-11-11T09:56:02.715Z\",\n          \"actualTouchDownTime\": \"2011-03-14T17:36:22.655Z\",\n          \"aircraftOnPosition\": \"2001-11-27T13:24:01.974Z\",\n          \"departureSlotTime\": \"1963-09-17T17:54:54.393Z\",\n          \"endOfHandling\": \"1988-01-16T03:21:51.721Z\",\n          \"estimated\": {\n            \"origin\": \"cillum velit ex dolore aute\",\n            \"type\": \"Ut velit eu \",\n            \"value\": \"1977-11-26T13:38:10.734Z\"\n          },\n          \"estimatedArrival\": \"1955-05-30T20:12:45.092Z\",\n          \"estimatedInternal\": \"1962-02-16T09:48:40.642Z\",\n          \"estimatedPublic\": \"1955-04-24T18:45:14.572Z\",\n          \"estimatedTakeOffTime\": \"2005-09-17T21:50:24.712Z\",\n          \"estimatedTouchDownTime\": \"1961-08-28T19:41:47.801Z\",\n          \"latestPublished\": \"1983-08-05T07:35:38.941Z\",\n          \"modified\": \"1972-06-08T18:08:20.731Z\",\n          \"scheduled\": \"1984-06-26T09:20:28.197Z\",\n          \"targetOffBlock\": \"1978-02-11T19:33:02.214Z\",\n          \"targetStartupApprovalTime\": \"1944-07-19T20:22:13.787Z\"\n        }\n      },\n      \"completionPercentage\": \"dolor Excepteur volupta\",\n      \"departureDateTimeDifference\": \"veniam\",\n      \"departureInformation\": {\n        \"airport\": {\n          \"city\": {\n            \"code\": \"eiusmod \",\n            \"country\": {\n              \"areaCode\": \"sint a\",\n              \"code\": \"nulla dolor\",\n              \"euCountry\": \"magna ea Excepteur sint\",\n              \"euroCountry\": \"velit\",\n              \"name\": \"consectetur fugiat \",\n              \"nameLangTranl\": \"Ut dol\"\n            },\n            \"name\": \"velit adipisicing magna\",\n            \"nameLangTranl\": \"dolor elit fugiat incidid\"\n          },\n          \"code\": \"fugiat Lorem\",\n          \"location\": {\n            \"altitude\": -54764440,\n            \"latitude\": 49625820.38463813,\n            \"longitude\": 8973856.880579725\n          },\n          \"name\": \"consectetur Duis sunt\",\n          \"nameLangTranl\": \"est\",\n          \"places\": {\n            \"aerogareCode\": \"commodo labore irure\",\n            \"boardingBusQuantity\": \"labore est\",\n            \"boardingContactType\": \"commodo laborum dolore incididunt\",\n            \"boardingPier\": \"tempor\",\n            \"boardingTerminal\": \"consectetur occaecat laboris\",\n            \"checkInAerogare\": \"Excepteur cupidatat tempor exercitation\",\n            \"checkInZone\": [\n              \"occaecat dolore\",\n              \"veniam anim ut\"\n            ],\n            \"departureTerminal\": \"elit cupidatat cillum\",\n            \"gateNumber\": [\n              \"Duis anim sit\",\n              \"occaecat ea qui\"\n            ],\n            \"parkingPosition\": \"pariatur Lorem\",\n            \"parkingPositionCustomStatus\": \"deserunt elit\",\n            \"parkingPositionType\": \"sunt ut non anim\",\n            \"pierCode\": \"Lorem exercitation dolore\",\n            \"profileLocation\": \"non enim\",\n            \"terminalCode\": \"reprehenderit magna Lorem\"\n          }\n        },\n        \"priorityIndicator\": \"id et Lorem\",\n        \"takeOffRunwayCode\": \"in occaecat\",\n        \"times\": {\n          \"actual\": \"2021-01-29T05:48:49.917Z\",\n          \"actualTakeOffTime\": \"1961-05-20T02:27:34.783Z\",\n          \"actualTouchDownTime\": \"1968-10-22T21:55:23.123Z\",\n          \"aircraftOnPosition\": \"1967-03-08T08:42:08.906Z\",\n          \"departureSlotTime\": \"1979-11-02T16:48:43.570Z\",\n          \"endOfHandling\": \"2001-09-18T04:50:36.586Z\",\n          \"estimated\": {\n            \"origin\": \"culpa\",\n            \"type\": \"ullamco Ut proident consequat\",\n            \"value\": \"1995-03-18T05:09:43.403Z\"\n          },\n          \"estimatedArrival\": \"2001-03-13T03:28:23.410Z\",\n          \"estimatedInternal\": \"2016-03-19T17:06:23.925Z\",\n          \"estimatedPublic\": \"1979-07-05T15:33:20.144Z\",\n          \"estimatedTakeOffTime\": \"2001-06-08T03:03:09.067Z\",\n          \"estimatedTouchDownTime\": \"1947-01-13T16:26:16.896Z\",\n          \"latestPublished\": \"1983-05-27T03:00:53.437Z\",\n          \"modified\": \"2002-08-10T00:32:22.523Z\",\n          \"scheduled\": \"2009-03-11T16:55:57.300Z\",\n          \"targetOffBlock\": \"2011-06-21T16:05:16.921Z\",\n          \"targetStartupApprovalTime\": \"1963-11-09T03:40:38.185Z\"\n        }\n      },\n      \"internalLegStatus\": \"ullamco officia esse\",\n      \"internalLegStatusArrFocus\": false,\n      \"irregularity\": {\n        \"cancelled\": \"adipisicing qui in dolore ullamco\",\n        \"delayCode\": [\n          \"nulla in et\",\n          \"laboris dolor\"\n        ],\n        \"delayDuration\": [\n          \"esse qui Excepteur ullamco\",\n          \"cupidatat Ut\"\n        ],\n        \"delayDurationArrival\": \"anim\",\n        \"delayDurationInternal\": \"sunt dolor aliqua\",\n        \"delayDurationPublic\": \"esse ullamco est\",\n        \"delayInformation\": [\n          {\n            \"delayCode\": \"esse ea ut in ut\",\n            \"delayDuration\": \"dolor ut minim occaecat sed\",\n            \"delayReason\": \"velit irure\",\n            \"delayReasonCodePublic\": \"dolore reprehenderit\",\n            \"delayReasonPublicLong\": \"esse velit\",\n            \"delayReasonPublicShort\": \"est sit eu Lorem\",\n            \"delaySubCode\": \"dolor\"\n          },\n          {\n            \"delayCode\": \"dolor est\",\n            \"delayDuration\": \"labore qu\",\n            \"delayReason\": \"fugiat in nostrud\",\n            \"delayReasonCodePublic\": \"proident magna\",\n            \"delayReasonPublicLong\": \"aliqua\",\n            \"delayReasonPublicShort\": \"veniam id do quis\",\n            \"delaySubCode\": \"commodo eiusmod in magna\"\n          }\n        ],\n        \"delayNextInfoDateTime\": \"1982-11-19T23:04:01.670Z\",\n        \"delayReason\": [\n          \"amet proident\",\n          \"irure consectetur voluptate\"\n        ],\n        \"delayReasonCodePublic\": [\n          \"sit ullamco amet\",\n          \"eu anim dolor\"\n        ],\n        \"delayReasonPublic\": [\n          \"cupidatat\",\n          \"ut id\"\n        ],\n        \"delayReasonPublicLangTransl\": [\n          \"aliqua ad sint\",\n          \"nulla deserunt ad anim\"\n        ],\n        \"delaySubCode\": [\n          \"sint exercita\",\n          \"est incididunt\"\n        ],\n        \"divertedFrom\": \"sit nulla\",\n        \"divertedTo\": \"velit in consectetur aute\",\n        \"publicDisruptionReason\": \"nostrud dolore\",\n        \"scheduledActionCode\": \"incididunt culpa aute elit \",\n        \"scheduledChangeReason\": \"eiusmod ut vo\"\n      },\n      \"legStatusInternal\": \"ad reprehenderit exercitation non\",\n      \"legStatusInternalLangTransl\": \"in Duis exercitation Excepteur consequat\",\n      \"legStatusPublic\": \"ullamco nostrud voluptate\",\n      \"legStatusPublicLangTransl\": \"ea in\",\n      \"passengerCustomsStatus\": \"enim magna sed\",\n      \"publishedStatus\": \"consectetur aute sed\",\n      \"scheduledFlightDuration\": \"Duis deserunt ullamco anim ut\",\n      \"serviceType\": \"ut\",\n      \"serviceTypeName\": \"quis cupidatat Ut\",\n      \"status\": \"labore fugiat nulla dolor qui\",\n      \"statusName\": \"labore sint ad\",\n      \"timeToArrival\": \"mollit Duis ea\",\n      \"timeZoneDifference\": \"sed anim quis tempor\",\n      \"trajectories\": [\n        {\n          \"aircraftPositionTime\": \"1988-02-04T04:32:51.403Z\",\n          \"location\": {\n            \"altitude\": 38946227,\n            \"latitude\": -99445930.25128227,\n            \"longitude\": 36066265.397927225\n          }\n        },\n        {\n          \"aircraftPositionTime\": \"1964-08-12T19:34:44.305Z\",\n          \"location\": {\n            \"altitude\": -42859469,\n            \"latitude\": -52361550.084378414,\n            \"longitude\": -29544695.93265401\n          }\n        }\n      ]\n    },\n    {\n      \"aircraft\": {\n        \"cabinCrewEmployer\": \"sunt adipisicing quis consectetur\",\n        \"cockpitCrewEmployer\": \"labo\",\n        \"operationalConfiguration\": \"qui minim consequat occaecat ipsum\",\n        \"ownerAirlineCode\": \"deserunt sed ut ex occaecat\",\n        \"ownerAirlineName\": \"aliquip elit sit\",\n        \"physicalFreightConfiguration\": \"dolore eu labore\",\n        \"physicalPaxConfiguration\": \"eu do commodo incididunt occaecat\",\n        \"registration\": \"tempor do voluptate\",\n        \"saleableConfiguration\": \"sed ut\",\n        \"subFleetCodeId\": \"velit enim aliquip\",\n        \"typeCode\": \"reprehenderit do velit incididunt cillum\",\n        \"typeName\": \"eu veniam\",\n        \"wifiEnabled\": \"et nisi\"\n      },\n      \"arrivalDateTimeDifference\": \"Lorem et\",\n      \"arrivalInformation\": {\n        \"airport\": {\n          \"city\": {\n            \"code\": \"ea aliqua ut \",\n            \"country\": {\n              \"areaCode\": \"incididunt minim proident est adipisicing\",\n              \"code\": \"laborum a\",\n              \"euCountry\": \"aute incididunt\",\n              \"euroCountry\": \"exercitation ut cupidatat ut officia\",\n              \"name\": \"Lorem proident\",\n              \"nameLangTranl\": \"culpa non in laboris\"\n            },\n            \"name\": \"ut cillum proident\",\n            \"nameLangTranl\": \"adipisicing ullamco esse\"\n          },\n          \"code\": \"reprehenderit dolor\",\n          \"location\": {\n            \"altitude\": 98508588,\n            \"latitude\": -2055400.7627194673,\n            \"longitude\": -7618729.746515736\n          },\n          \"name\": \"consectetur sit dolor Excepteur\",\n          \"nameLangTranl\": \"aliquip dolor ad in\",\n          \"places\": {\n            \"aerogareCode\": \"consectetur cupidatat\",\n            \"arrivalHall\": [\n              \"enim\",\n              \"voluptate\"\n            ],\n            \"arrivalPositionPier\": \"ut ad\",\n            \"arrivalPositionTerminal\": \"cillum Duis\",\n            \"arrivalTerminal\": \"sint aliqua ex nisi\",\n            \"baggageBelt\": [\n              \"id do mollit Lorem\",\n              \"id Excepteur s\"\n            ],\n            \"disembarkingAerogare\": \"esse aliquip reprehenderit ad\",\n            \"disembarkingBusQuantity\": \"in dolor minim cupidatat\",\n            \"disembarkingContactType\": \"nisi esse\",\n            \"firstBagOnBeltTime\": \"2008-01-03T11:45:35.218Z\",\n            \"flightSecurityLevel\": \"id sint labor\",\n            \"gateNumber\": [\n              \"irure tempor\",\n              \"ad elit sint Ut\"\n            ],\n            \"lastBagOnBeltTime\": \"1968-11-27T10:46:11.197Z\",\n            \"parkingPosition\": \"nulla elit\",\n            \"parkingPositionCustomStatus\": \"aliquip dolor\",\n            \"parkingPositionType\": \"culpa dolore qui sint\",\n            \"pierCode\": \"reprehenderit dolore in laboris\",\n            \"terminalCode\": \"Duis proide\"\n          }\n        },\n        \"landingRunwayCode\": \"id tempor officia\",\n        \"priorityIndicator\": \"officia irure deserunt\",\n        \"times\": {\n          \"actual\": \"1984-07-17T11:39:30.658Z\",\n          \"actualTakeOffTime\": \"1956-06-04T01:41:47.332Z\",\n          \"actualTouchDownTime\": \"1957-06-04T09:49:06.952Z\",\n          \"aircraftOnPosition\": \"1996-10-01T23:16:40.329Z\",\n          \"departureSlotTime\": \"1953-02-20T17:18:53.168Z\",\n          \"endOfHandling\": \"2023-05-22T01:49:20.581Z\",\n          \"estimated\": {\n            \"origin\": \"esse anim ex reprehenderit\",\n            \"type\": \"commodo dolor\",\n            \"value\": \"2021-06-17T12:33:04.077Z\"\n          },\n          \"estimatedArrival\": \"1971-12-26T07:10:52.329Z\",\n          \"estimatedInternal\": \"2016-07-20T10:30:49.793Z\",\n          \"estimatedPublic\": \"2007-08-08T19:31:25.892Z\",\n          \"estimatedTakeOffTime\": \"1986-02-12T10:42:59.030Z\",\n          \"estimatedTouchDownTime\": \"1965-12-02T21:30:40.924Z\",\n          \"latestPublished\": \"1959-06-19T07:40:19.616Z\",\n          \"modified\": \"1946-05-11T05:10:02.781Z\",\n          \"scheduled\": \"1983-11-05T06:18:19.834Z\",\n          \"targetOffBlock\": \"1948-01-01T12:10:09.733Z\",\n          \"targetStartupApprovalTime\": \"2018-02-09T23:07:14.445Z\"\n        }\n      },\n      \"completionPercentage\": \"ex\",\n      \"departureDateTimeDifference\": \"ad Lorem id\",\n      \"departureInformation\": {\n        \"airport\": {\n          \"city\": {\n            \"code\": \"magna Lorem aute\",\n            \"country\": {\n              \"areaCode\": \"elit eu cillum\",\n              \"code\": \"nulla cillum\",\n              \"euCountry\": \"enim aliqua exercitation ex ipsum\",\n              \"euroCountry\": \"aute est enim incididunt\",\n              \"name\": \"laborum\",\n              \"nameLangTranl\": \"velit\"\n            },\n            \"name\": \"laboris id consectetur\",\n            \"nameLangTranl\": \"aliq\"\n          },\n          \"code\": \"quis anim\",\n          \"location\": {\n            \"altitude\": -18003310,\n            \"latitude\": -25089652.839761585,\n            \"longitude\": -8329941.44464086\n          },\n          \"name\": \"culpa minim\",\n          \"nameLangTranl\": \"laborum ad quis consectetur\",\n          \"places\": {\n            \"aerogareCode\": \"sit labore voluptate\",\n            \"boardingBusQuantity\": \"aute ad\",\n            \"boardingContactType\": \"occaecat aute do deserunt\",\n            \"boardingPier\": \"quis reprehenderit\",\n            \"boardingTerminal\": \"in Duis\",\n            \"checkInAerogare\": \"est\",\n            \"checkInZone\": [\n              \"nostrud Excepteur ut exercitation\",\n              \"sit\"\n            ],\n            \"departureTerminal\": \"Ut cupidatat est\",\n            \"gateNumber\": [\n              \"consectetur dolore eiusmod\",\n              \"Lorem pariatur eu nulla\"\n            ],\n            \"parkingPosition\": \"irure labore non\",\n            \"parkingPositionCustomStatus\": \"mollit non\",\n            \"parkingPositionType\": \"in pariatur laborum voluptate\",\n            \"pierCode\": \"ea deserunt Duis\",\n            \"profileLocation\": \"aute nisi in consectetur\",\n            \"terminalCode\": \"est do\"\n          }\n        },\n        \"priorityIndicator\": \"dolor\",\n        \"takeOffRunwayCode\": \"commodo\",\n        \"times\": {\n          \"actual\": \"2002-02-08T06:03:14.775Z\",\n          \"actualTakeOffTime\": \"1951-08-30T09:44:45.718Z\",\n          \"actualTouchDownTime\": \"1983-04-14T23:33:52.756Z\",\n          \"aircraftOnPosition\": \"1966-10-09T23:14:03.606Z\",\n          \"departureSlotTime\": \"1954-03-19T04:36:57.023Z\",\n          \"endOfHandling\": \"1982-05-30T10:46:06.032Z\",\n          \"estimated\": {\n            \"origin\": \"Ut sunt Excepteur in\",\n            \"type\": \"ea dolore fugiat\",\n            \"value\": \"1974-02-16T04:59:55.292Z\"\n          },\n          \"estimatedArrival\": \"2018-09-09T11:23:12.423Z\",\n          \"estimatedInternal\": \"2022-08-24T08:30:55.730Z\",\n          \"estimatedPublic\": \"1970-09-28T18:18:40.191Z\",\n          \"estimatedTakeOffTime\": \"1993-03-01T13:36:28.304Z\",\n          \"estimatedTouchDownTime\": \"1954-08-21T13:47:31.286Z\",\n          \"latestPublished\": \"1990-10-01T11:18:08.462Z\",\n          \"modified\": \"1999-04-17T21:34:09.976Z\",\n          \"scheduled\": \"1969-03-17T09:00:30.019Z\",\n          \"targetOffBlock\": \"1996-07-25T15:54:59.209Z\",\n          \"targetStartupApprovalTime\": \"1989-01-12T11:20:06.001Z\"\n        }\n      },\n      \"internalLegStatus\": \"velit Ex\",\n      \"internalLegStatusArrFocus\": false,\n      \"irregularity\": {\n        \"cancelled\": \"minim ut proident Lorem\",\n        \"delayCode\": [\n          \"cillum in exercitation in\",\n          \"ut sint eu enim fugiat\"\n        ],\n        \"delayDuration\": [\n          \"nulla quis\",\n          \"Ut aliqua do\"\n        ],\n        \"delayDurationArrival\": \"culpa dolor quis id Duis\",\n        \"delayDurationInternal\": \"ad dolor\",\n        \"delayDurationPublic\": \"sint voluptate velit reprehenderit consequat\",\n        \"delayInformation\": [\n          {\n            \"delayCode\": \"sunt deserunt\",\n            \"delayDuration\": \"aute Duis sunt\",\n            \"delayReason\": \"dolor eu adipisicing\",\n            \"delayReasonCodePublic\": \"nostrud velit\",\n            \"delayReasonPublicLong\": \"commodo nulla fugiat\",\n            \"delayReasonPublicShort\": \"dolor nisi tempor\",\n            \"delaySubCode\": \"mollit ipsum sint\"\n          },\n          {\n            \"delayCode\": \"quis veniam\",\n            \"delayDuration\": \"fugiat\",\n            \"delayReason\": \"dolore velit \",\n            \"delayReasonCodePublic\": \"labore velit in laborum\",\n            \"delayReasonPublicLong\": \"elit eu et ut\",\n            \"delayReasonPublicShort\": \"incididunt eu\",\n            \"delaySubCode\": \"id minim dolore\"\n          }\n        ],\n        \"delayNextInfoDateTime\": \"1968-12-27T07:49:58.833Z\",\n        \"delayReason\": [\n          \"do cillum incididunt nisi dol\",\n          \"Lorem qui consequat\"\n        ],\n        \"delayReasonCodePublic\": [\n          \"mollit ea esse id\",\n          \"aliquip mollit eu\"\n        ],\n        \"delayReasonPublic\": [\n          \"labore\",\n          \"incididun\"\n        ],\n        \"delayReasonPublicLangTransl\": [\n          \"occaecat aute\",\n          \"est laborum eu et\"\n        ],\n        \"delaySubCode\": [\n          \"mollit in\",\n          \"Ut quis\"\n        ],\n        \"divertedFrom\": \"cillum aute\",\n        \"divertedTo\": \"officia\",\n        \"publicDisruptionReason\": \"officia nostrud\",\n        \"scheduledActionCode\": \"consequat aliquip nisi\",\n        \"scheduledChangeReason\": \"sunt deserunt ea nisi\"\n      },\n      \"legStatusInternal\": \"consequat exercitation\",\n      \"legStatusInternalLangTransl\": \"proident Ut cupidatat ut\",\n      \"legStatusPublic\": \"elit exercitation ex amet id\",\n      \"legStatusPublicLangTransl\": \"temp\",\n      \"passengerCustomsStatus\": \"pariatur et adipisicing ea\",\n      \"publishedStatus\": \"quis Ut occaecat fugiat est\",\n      \"scheduledFlightDuration\": \"Ut\",\n      \"serviceType\": \"reprehenderit\",\n      \"serviceTypeName\": \"qui velit\",\n      \"status\": \"nostrud officia\",\n      \"statusName\": \"aliquip culpa id\",\n      \"timeToArrival\": \"incididunt et\",\n      \"timeZoneDifference\": \"sint cupidatat nisi culpa dolor\",\n      \"trajectories\": [\n        {\n          \"aircraftPositionTime\": \"1979-11-06T00:38:20.047Z\",\n          \"location\": {\n            \"altitude\": -42146708,\n            \"latitude\": -70478675.26857488,\n            \"longitude\": 69508989.91376159\n          }\n        },\n        {\n          \"aircraftPositionTime\": \"1959-10-02T23:20:07.820Z\",\n          \"location\": {\n            \"altitude\": -94014529,\n            \"latitude\": 47422772.06812245,\n            \"longitude\": -39082216.72491616\n          }\n        }\n      ]\n    }\n  ],\n  \"flightNumber\": 15075526,\n  \"flightRelations\": {\n    \"equivalentFlightData\": {\n      \"airlineCode\": \"ea amet\",\n      \"flightNumber\": \"Lorem aliqua aliquip\",\n      \"flightScheduleDate\": \"1950-04-25\",\n      \"id\": \"cillum proident\",\n      \"operationalSuffix\": \"voluptate ullamco deserunt esse\"\n    },\n    \"onwardFlightData\": {\n      \"airlineCode\": \"commodo\",\n      \"flightNumber\": \"in velit eu\",\n      \"flightScheduleDate\": \"1949-11-15\",\n      \"id\": \"voluptate aute adipisicing\",\n      \"operationalSuffix\": \"labore proident Excepteur\"\n    },\n    \"previousFlightData\": {\n      \"airlineCode\": \"ut amet dolor qui\",\n      \"flightNumber\": \"magna qui\",\n      \"flightScheduleDate\": \"1973-11-26\",\n      \"id\": \"qui eiusmod\",\n      \"operationalSuffix\": \"nostrud non\"\n    }\n  },\n  \"flightScheduleDate\": \"2013-01-22\",\n  \"flightStatusInternal\": \"ad nos\",\n  \"flightStatusInternalLangTransl\": \"in laborum sint\",\n  \"flightStatusPublic\": \"pariatur aute Excepteur\",\n  \"flightStatusPublicLangTransl\": \"Lorem in\",\n  \"haul\": \"nulla dolore dolor do\",\n  \"id\": \"in minim\",\n  \"internalFlightStatus\": \"in ea tempor non\",\n  \"internalStatusArrFocus\": true,\n  \"operationalSuffix\": \"quis officia\",\n  \"route\": [\n    \"quis do anim\",\n    \"magna\"\n  ]\n}"
+								},
+								{
+									"id": "8de43db8-c4e2-4159-9395-8f338d9f34a4",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+												"key": "Accept-Language",
+												"value": "en-GB"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"flights",
+												":flightDate"
+											],
+											"query": [
+												{
+													"description": "consumer Host",
+													"key": "consumerHost",
+													"value": "dolor incididunt est"
+												},
+												{
+													"description": "expand with additional flight information",
+													"key": "expand",
+													"value": "trajectory"
+												}
+											],
+											"variable": [
+												{
+													"key": "flightDate"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								},
+								{
+									"id": "78e02c73-44d1-4182-8072-f61c126a2d0d",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+												"key": "Accept-Language",
+												"value": "en-GB"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"flights",
+												":flightDate"
+											],
+											"query": [
+												{
+													"description": "consumer Host",
+													"key": "consumerHost",
+													"value": "dolor incididunt est"
+												},
+												{
+													"description": "expand with additional flight information",
+													"key": "expand",
+													"value": "trajectory"
+												}
+											],
+											"variable": [
+												{
+													"key": "flightDate"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								},
+								{
+									"id": "2d7d7304-077c-4a46-a295-21d9c9c3aaad",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+												"key": "Accept-Language",
+												"value": "en-GB"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"flights",
+												":flightDate"
+											],
+											"query": [
+												{
+													"description": "consumer Host",
+													"key": "consumerHost",
+													"value": "dolor incididunt est"
+												},
+												{
+													"description": "expand with additional flight information",
+													"key": "expand",
+													"value": "trajectory"
+												}
+											],
+											"variable": [
+												{
+													"key": "flightDate"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								},
+								{
+									"id": "896985b8-b7b3-4ecb-bd55-69a6b94e572b",
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+												"key": "Accept-Language",
+												"value": "en-GB"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/flights/:flightDate?consumerHost=dolor incididunt est&expand=trajectory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"flights",
+												":flightDate"
+											],
+											"query": [
+												{
+													"description": "consumer Host",
+													"key": "consumerHost",
+													"value": "dolor incididunt est"
+												},
+												{
+													"description": "expand with additional flight information",
+													"key": "expand",
+													"value": "trajectory"
+												}
+											],
+											"variable": [
+												{
+													"key": "flightDate"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "1d8a6929-5ffe-44d5-9eca-6b8759b3c0ea"
+				},
+				{
+					"name": "get flights",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3285c725-2af7-4eb1-9966-8f3e1ba3732b",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6d307199-5ba9-447a-877a-014245c96cba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+								"key": "Accept-Language",
+								"value": "en-GB"
+							},
+							{
+								"key": "Accept",
+								"value": "application/hal+json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=sunt ad sint est mollit&carrierCode=do irure incididunt exercitation&operatingAirlineCode=sunt ad sint est mollit&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=sunt ad sint est mollit&serviceType=do irure incididunt exercitation",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "startRange",
+									"value": "1946-12-09T10:39:06.188Z",
+									"description": "date time of start range"
+								},
+								{
+									"key": "endRange",
+									"value": "1946-12-09T10:39:06.188Z",
+									"description": "date time of end range"
+								},
+								{
+									"key": "movementType",
+									"value": "A",
+									"description": "indicates that range applies to origin or destination"
+								},
+								{
+									"key": "timeOriginType",
+									"value": "I",
+									"description": "indicates on which date time to query on"
+								},
+								{
+									"key": "timeType",
+									"value": "U",
+									"description": "indicates that given range is UTC or LOCAL"
+								},
+								{
+									"key": "origin",
+									"value": "dolor incididunt est",
+									"description": "IATA airport code of departure"
+								},
+								{
+									"key": "departureCity",
+									"value": "dolor incididunt est",
+									"description": "IATA city code of departure"
+								},
+								{
+									"key": "destination",
+									"value": "dolor incididunt est",
+									"description": "IATA airport code of arrival"
+								},
+								{
+									"key": "arrivalCity",
+									"value": "dolor incididunt est",
+									"description": "IATA city code of arrival"
+								},
+								{
+									"key": "consumerHost",
+									"value": "dolor incididunt est",
+									"description": "consumer Host"
+								},
+								{
+									"key": "carrierCode",
+									"value": "sunt ad sint est mollit",
+									"description": "IATA airline code"
+								},
+								{
+									"key": "carrierCode",
+									"value": "do irure incididunt exercitation",
+									"description": "IATA airline code"
+								},
+								{
+									"key": "operatingAirlineCode",
+									"value": "sunt ad sint est mollit",
+									"description": "IATA operating airline codes"
+								},
+								{
+									"key": "operatingAirlineCode",
+									"value": "do irure incididunt exercitation",
+									"description": "IATA operating airline codes"
+								},
+								{
+									"key": "flightNumber",
+									"value": "dolor incididunt est",
+									"description": "flight number which is four digits long, when smaller prefix with zero"
+								},
+								{
+									"key": "operationalSuffix",
+									"value": "A",
+									"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day"
+								},
+								{
+									"key": "aircraftRegistration",
+									"value": "dolor incididunt est",
+									"description": "filter on aircraft registration"
+								},
+								{
+									"key": "aircraftType",
+									"value": "dolor incididunt est",
+									"description": "filter on aircraft type"
+								},
+								{
+									"key": "pageSize",
+									"value": "NaN",
+									"description": "indicates the number of elements the page will contain"
+								},
+								{
+									"key": "pageNumber",
+									"value": "36010431",
+									"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned"
+								},
+								{
+									"key": "serviceType",
+									"value": "sunt ad sint est mollit",
+									"description": "serviceType search"
+								},
+								{
+									"key": "serviceType",
+									"value": "do irure incididunt exercitation",
+									"description": "serviceType search"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "465c6988-c157-4057-b19f-e30b73a90714",
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									},
+									{
+										"key": "Accept",
+										"value": "application/hal+json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=do irure incididunt exercitation&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=do irure incididunt exercitation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights"
+									],
+									"query": [
+										{
+											"description": "date time of start range",
+											"key": "startRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "date time of end range",
+											"key": "endRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "indicates that range applies to origin or destination",
+											"key": "movementType",
+											"value": "A"
+										},
+										{
+											"description": "indicates on which date time to query on",
+											"key": "timeOriginType",
+											"value": "I"
+										},
+										{
+											"description": "indicates that given range is UTC or LOCAL",
+											"key": "timeType",
+											"value": "U"
+										},
+										{
+											"description": "IATA airport code of departure",
+											"key": "origin",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of departure",
+											"key": "departureCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airport code of arrival",
+											"key": "destination",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of arrival",
+											"key": "arrivalCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airline code",
+											"key": "carrierCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "IATA operating airline codes",
+											"key": "operatingAirlineCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "flight number which is four digits long, when smaller prefix with zero",
+											"key": "flightNumber",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+											"key": "operationalSuffix",
+											"value": "A"
+										},
+										{
+											"description": "filter on aircraft registration",
+											"key": "aircraftRegistration",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "filter on aircraft type",
+											"key": "aircraftType",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "indicates the number of elements the page will contain",
+											"key": "pageSize",
+											"value": "NaN"
+										},
+										{
+											"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+											"key": "pageNumber",
+											"value": "36010431"
+										},
+										{
+											"description": "serviceType search",
+											"key": "serviceType",
+											"value": "do irure incididunt exercitation"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"action\": {\n        \"hostPrefix\": \"Excepteur\",\n        \"href\": \"sint exercitation adipisicing elit pariatur\",\n        \"profile\": \"elit\",\n        \"templated\": true,\n        \"type\": \"dolore Ut\"\n      },\n      \"code\": \"ipsum et Ut exercitation\",\n      \"description\": \"culpa aliqua nisi\",\n      \"name\": \"in ex dolor\",\n      \"severity\": \"WARNING\"\n    },\n    {\n      \"action\": {\n        \"hostPrefix\": \"consequat\",\n        \"href\": \"dolore ea do est\",\n        \"profile\": \"laborum adipisicing id\",\n        \"templated\": true,\n        \"type\": \"occaecat commodo Duis nostrud adipisicing\"\n      },\n      \"code\": \"Excepteur minim\",\n      \"description\": \"culpa reprehenderit\",\n      \"name\": \"sed dolor exercitation reprehenderit\",\n      \"severity\": \"ERROR\"\n    }\n  ],\n  \"operationalFlights\": [\n    {\n      \"airline\": {\n        \"code\": \"anim incididunt non\",\n        \"name\": \"sed reprehenderit esse eiusmod\"\n      },\n      \"baseProvinceIndicator\": \"fugiat minim ipsum\",\n      \"codeShareRelations\": [\n        {\n          \"airline\": {\n            \"code\": \"anim aute culpa\",\n            \"name\": \"ad sed dolor\"\n          },\n          \"code\": \"nostrud adipisicing\",\n          \"flightScheduleDate\": \"2011-10-30\",\n          \"marketingFlightNumber\": -10788829,\n          \"operationalSuffix\": \"enim\",\n          \"saleableVersion\": \"sed\",\n          \"type\": \"ea\"\n        },\n        {\n          \"airline\": {\n            \"code\": \"Duis nostrud\",\n            \"name\": \"in in\"\n          },\n          \"code\": \"officia dolore ven\",\n          \"flightScheduleDate\": \"1972-01-18\",\n          \"marketingFlightNumber\": -4694892,\n          \"operationalSuffix\": \"irure sed dolore\",\n          \"saleableVersion\": \"ad cillum aliquip elit\",\n          \"type\": \"enim dolore ex\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"action\": {\n            \"hostPrefix\": \"sed labore\",\n            \"href\": \"esse adipisicing\",\n            \"profile\": \"Duis Lorem sunt \",\n            \"templated\": false,\n            \"type\": \"id\"\n          },\n          \"code\": \"esse\",\n          \"description\": \"laboris e\",\n          \"name\": \"Ut dolor eiusmod\",\n          \"severity\": \"ERROR\"\n        },\n        {\n          \"action\": {\n            \"hostPrefix\": \"in fugiat\",\n            \"href\": \"culpa\",\n            \"profile\": \"dolor voluptate laboris aute occaecat\",\n            \"templated\": true,\n            \"type\": \"ad laborum laboris\"\n          },\n          \"code\": \"in officia\",\n          \"description\": \"do esse officia\",\n          \"name\": \"elit ex sit\",\n          \"severity\": \"WARNING\"\n        }\n      ],\n      \"flightDetailsBlocked\": false,\n      \"flightLegs\": [\n        {\n          \"aircraft\": {\n            \"cabinCrewEmployer\": \"aute laborum\",\n            \"cockpitCrewEmployer\": \"laborum labore in\",\n            \"operationalConfiguration\": \"ipsum\",\n            \"ownerAirlineCode\": \"labore deserunt cupidatat ad\",\n            \"ownerAirlineName\": \"ipsum commodo exercitation\",\n            \"physicalFreightConfiguration\": \"proident sint\",\n            \"physicalPaxConfiguration\": \"consectetur anim\",\n            \"registration\": \"esse ullamco\",\n            \"saleableConfiguration\": \"anim deserunt\",\n            \"subFleetCodeId\": \"esse eu deserunt nostrud ullamco\",\n            \"typeCode\": \"dolor ex sint\",\n            \"typeName\": \"cupidatat adipisicing fugiat officia\",\n            \"wifiEnabled\": \"anim\"\n          },\n          \"arrivalDateTimeDifference\": \"c\",\n          \"arrivalInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"culpa sit dolore\",\n                \"country\": {\n                  \"areaCode\": \"eiusmod sunt ullamco\",\n                  \"code\": \"laborum dolore nostrud veniam\",\n                  \"euCountry\": \"et Excepteur eu\",\n                  \"euroCountry\": \"amet qui\",\n                  \"name\": \"do ea minim\",\n                  \"nameLangTranl\": \"dolore ex\"\n                },\n                \"name\": \"eiusmod eu Excepteur\",\n                \"nameLangTranl\": \"mollit aliqu\"\n              },\n              \"code\": \"reprehenderit voluptate qui quis\",\n              \"location\": {\n                \"altitude\": -67966672,\n                \"latitude\": -35873347.43949291,\n                \"longitude\": -28801967.536751017\n              },\n              \"name\": \"ipsum sunt ad dolore\",\n              \"nameLangTranl\": \"dolor occaecat nostrud id\",\n              \"places\": {\n                \"aerogareCode\": \"nisi sed pariatur culpa e\",\n                \"arrivalHall\": [\n                  \"labore\",\n                  \"irure sed incidid\"\n                ],\n                \"arrivalPositionPier\": \"dolor sint Lorem sit\",\n                \"arrivalPositionTerminal\": \"laborum\",\n                \"arrivalTerminal\": \"et elit est labore\",\n                \"baggageBelt\": [\n                  \"aliqua nulla ad\",\n                  \"occaecat nu\"\n                ],\n                \"disembarkingAerogare\": \"reprehenderit ad consectetur eu labore\",\n                \"disembarkingBusQuantity\": \"commodo ex exercitation\",\n                \"disembarkingContactType\": \"consectetur sunt culpa\",\n                \"firstBagOnBeltTime\": \"1999-04-29T21:35:16.112Z\",\n                \"flightSecurityLevel\": \"consequat voluptate\",\n                \"gateNumber\": [\n                  \"ipsu\",\n                  \"velit ut qui\"\n                ],\n                \"lastBagOnBeltTime\": \"1978-08-10T14:05:14.840Z\",\n                \"parkingPosition\": \"in\",\n                \"parkingPositionCustomStatus\": \"tempor dolor ex dolore voluptate\",\n                \"parkingPositionType\": \"enim aliquip dolor\",\n                \"pierCode\": \"sint est\",\n                \"terminalCode\": \"esse mollit fugiat cillum\"\n              }\n            },\n            \"landingRunwayCode\": \"et\",\n            \"priorityIndicator\": \"laborum inci\",\n            \"times\": {\n              \"actual\": \"1955-01-02T16:57:27.357Z\",\n              \"actualTakeOffTime\": \"1976-08-06T18:25:43.093Z\",\n              \"actualTouchDownTime\": \"1953-02-22T10:09:13.646Z\",\n              \"aircraftOnPosition\": \"2017-05-15T20:33:14.104Z\",\n              \"departureSlotTime\": \"1978-05-19T12:36:16.934Z\",\n              \"endOfHandling\": \"1995-01-17T00:07:42.124Z\",\n              \"estimated\": {\n                \"origin\": \"ullamco commodo\",\n                \"type\": \"consectetur ut occaecat\",\n                \"value\": \"2023-06-27T20:21:21.144Z\"\n              },\n              \"estimatedArrival\": \"1956-10-18T06:24:28.527Z\",\n              \"estimatedInternal\": \"2006-11-11T06:03:02.367Z\",\n              \"estimatedPublic\": \"1985-11-11T15:07:59.040Z\",\n              \"estimatedTakeOffTime\": \"1981-09-07T04:32:58.580Z\",\n              \"estimatedTouchDownTime\": \"1967-12-09T21:08:30.611Z\",\n              \"latestPublished\": \"1978-08-08T19:14:04.186Z\",\n              \"modified\": \"1976-10-21T20:55:41.541Z\",\n              \"scheduled\": \"2016-06-19T20:50:37.709Z\",\n              \"targetOffBlock\": \"2002-06-10T23:57:09.386Z\",\n              \"targetStartupApprovalTime\": \"2012-09-14T19:29:10.023Z\"\n            }\n          },\n          \"completionPercentage\": \"culpa aliquip\",\n          \"departureDateTimeDifference\": \"velit\",\n          \"departureInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"laboris sed enim consectetur\",\n                \"country\": {\n                  \"areaCode\": \"dolore dolore ut\",\n                  \"code\": \"ipsum\",\n                  \"euCountry\": \"nisi officia in\",\n                  \"euroCountry\": \"velit irure\",\n                  \"name\": \"Excepteur officia ullamco\",\n                  \"nameLangTranl\": \"sunt dolor sint adipisicing\"\n                },\n                \"name\": \"laboris ut in elit\",\n                \"nameLangTranl\": \"reprehenderit pariatur esse sed\"\n              },\n              \"code\": \"nisi\",\n              \"location\": {\n                \"altitude\": -34583059,\n                \"latitude\": 5862395.034594804,\n                \"longitude\": 91584086.26637965\n              },\n              \"name\": \"consequat\",\n              \"nameLangTranl\": \"consectetur dolore id culpa\",\n              \"places\": {\n                \"aerogareCode\": \"Lorem ullamco consequat d\",\n                \"boardingBusQuantity\": \"culpa consectetur commodo\",\n                \"boardingContactType\": \"anim aliquip\",\n                \"boardingPier\": \"elit\",\n                \"boardingTerminal\": \"mollit el\",\n                \"checkInAerogare\": \"Lorem\",\n                \"checkInZone\": [\n                  \"des\",\n                  \"tempor magna ut\"\n                ],\n                \"departureTerminal\": \"nisi cillum\",\n                \"gateNumber\": [\n                  \"amet occaecat\",\n                  \"sed mollit nostrud in ullamco\"\n                ],\n                \"parkingPosition\": \"ad consequat Excepteur ullamco\",\n                \"parkingPositionCustomStatus\": \"tempor ad Ut\",\n                \"parkingPositionType\": \"veniam ipsum id laborum\",\n                \"pierCode\": \"enim Lorem reprehenderit\",\n                \"profileLocation\": \"dolor esse\",\n                \"terminalCode\": \"id nisi ullamco\"\n              }\n            },\n            \"priorityIndicator\": \"culpa Duis Excepteur ut elit\",\n            \"takeOffRunwayCode\": \"sint\",\n            \"times\": {\n              \"actual\": \"1986-01-13T19:17:09.857Z\",\n              \"actualTakeOffTime\": \"1955-06-29T12:51:06.666Z\",\n              \"actualTouchDownTime\": \"1977-07-09T01:12:18.572Z\",\n              \"aircraftOnPosition\": \"2019-05-15T19:45:04.885Z\",\n              \"departureSlotTime\": \"2019-07-09T02:59:19.978Z\",\n              \"endOfHandling\": \"2011-12-06T14:20:10.750Z\",\n              \"estimated\": {\n                \"origin\": \"f\",\n                \"type\": \"est eiusmod occaecat elit\",\n                \"value\": \"2006-01-29T02:45:39.063Z\"\n              },\n              \"estimatedArrival\": \"2006-01-22T05:34:15.635Z\",\n              \"estimatedInternal\": \"2002-09-08T20:04:46.166Z\",\n              \"estimatedPublic\": \"1968-01-03T18:56:34.914Z\",\n              \"estimatedTakeOffTime\": \"1993-10-22T14:17:05.519Z\",\n              \"estimatedTouchDownTime\": \"1951-03-07T12:12:22.952Z\",\n              \"latestPublished\": \"2019-06-10T01:55:09.421Z\",\n              \"modified\": \"2021-06-08T12:17:40.249Z\",\n              \"scheduled\": \"1995-06-02T17:51:42.726Z\",\n              \"targetOffBlock\": \"1954-06-02T03:35:42.470Z\",\n              \"targetStartupApprovalTime\": \"1963-11-10T14:10:54.578Z\"\n            }\n          },\n          \"internalLegStatus\": \"fugiat culpa laboris minim\",\n          \"internalLegStatusArrFocus\": true,\n          \"irregularity\": {\n            \"cancelled\": \"tempor sint\",\n            \"delayCode\": [\n              \"ex consectetur\",\n              \"minim an\"\n            ],\n            \"delayDuration\": [\n              \"nis\",\n              \"magna incididunt \"\n            ],\n            \"delayDurationArrival\": \"occaecat sit esse\",\n            \"delayDurationInternal\": \"in laborum dolore elit\",\n            \"delayDurationPublic\": \"est cillum amet\",\n            \"delayInformation\": [\n              {\n                \"delayCode\": \"laboris elit dolor ad ut\",\n                \"delayDuration\": \"nostrud velit reprehenderit\",\n                \"delayReason\": \"eu aliquip Ut voluptate\",\n                \"delayReasonCodePublic\": \"Lorem sit elit culpa\",\n                \"delayReasonPublicLong\": \"irure reprehenderit officia Lor\",\n                \"delayReasonPublicShort\": \"mollit pro\",\n                \"delaySubCode\": \"sunt\"\n              },\n              {\n                \"delayCode\": \"sed al\",\n                \"delayDuration\": \"magna sint\",\n                \"delayReason\": \"Duis minim veniam\",\n                \"delayReasonCodePublic\": \"tempor\",\n                \"delayReasonPublicLong\": \"enim irure nostrud consequat id\",\n                \"delayReasonPublicShort\": \"occaecat \",\n                \"delaySubCode\": \"ipsum dolore magna\"\n              }\n            ],\n            \"delayNextInfoDateTime\": \"1952-05-08T01:11:43.827Z\",\n            \"delayReason\": [\n              \"magna eu\",\n              \"Lorem cupi\"\n            ],\n            \"delayReasonCodePublic\": [\n              \"ipsum\",\n              \"Lorem non\"\n            ],\n            \"delayReasonPublic\": [\n              \"sint qui minim do\",\n              \"cupidatat dolor ipsum\"\n            ],\n            \"delayReasonPublicLangTransl\": [\n              \"mollit tempor\",\n              \"ad ullamco aliqua\"\n            ],\n            \"delaySubCode\": [\n              \"ex amet commodo in\",\n              \"dolore\"\n            ],\n            \"divertedFrom\": \"ullamco mollit amet cillum\",\n            \"divertedTo\": \"occaecat\",\n            \"publicDisruptionReason\": \"ea enim laboris\",\n            \"scheduledActionCode\": \"amet et aliqua ut\",\n            \"scheduledChangeReason\": \"occaecat in\"\n          },\n          \"legStatusInternal\": \"magna tempor mollit consequat\",\n          \"legStatusInternalLangTransl\": \"sed velit culpa dolore\",\n          \"legStatusPublic\": \"fugiat sint\",\n          \"legStatusPublicLangTransl\": \"ut officia est eiusmod veniam\",\n          \"passengerCustomsStatus\": \"dolor aliqua\",\n          \"publishedStatus\": \"Ut cons\",\n          \"scheduledFlightDuration\": \"sed cillum ex\",\n          \"serviceType\": \"tempor dolor eu ea\",\n          \"serviceTypeName\": \"ut sunt\",\n          \"status\": \"nulla minim et tempor commodo\",\n          \"statusName\": \"veniam\",\n          \"timeToArrival\": \"incididunt minim\",\n          \"timeZoneDifference\": \"consequat\",\n          \"trajectories\": [\n            {\n              \"aircraftPositionTime\": \"1971-01-24T20:32:46.622Z\",\n              \"location\": {\n                \"altitude\": 76182301,\n                \"latitude\": -57275646.1587852,\n                \"longitude\": -47385632.66652846\n              }\n            },\n            {\n              \"aircraftPositionTime\": \"1973-06-17T13:38:56.979Z\",\n              \"location\": {\n                \"altitude\": -88856768,\n                \"latitude\": -43136910.674526475,\n                \"longitude\": 58771386.665169775\n              }\n            }\n          ]\n        },\n        {\n          \"aircraft\": {\n            \"cabinCrewEmployer\": \"ut\",\n            \"cockpitCrewEmployer\": \"Ut cupidatat\",\n            \"operationalConfiguration\": \"velit\",\n            \"ownerAirlineCode\": \"occaecat veniam\",\n            \"ownerAirlineName\": \"aute\",\n            \"physicalFreightConfiguration\": \"ullamco do aliqua\",\n            \"physicalPaxConfiguration\": \"occaecat incididunt anim\",\n            \"registration\": \"irure sit\",\n            \"saleableConfiguration\": \"laboris ea\",\n            \"subFleetCodeId\": \"voluptate\",\n            \"typeCode\": \"nulla dolore anim\",\n            \"typeName\": \"voluptate\",\n            \"wifiEnabled\": \"Ut sed in\"\n          },\n          \"arrivalDateTimeDifference\": \"quis sunt deserunt ullamco\",\n          \"arrivalInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"proident dolor do dolore\",\n                \"country\": {\n                  \"areaCode\": \"consequat laboris dolore\",\n                  \"code\": \"nulla amet ad dolore\",\n                  \"euCountry\": \"id pariatur\",\n                  \"euroCountry\": \"in in ad mollit\",\n                  \"name\": \"labore nisi\",\n                  \"nameLangTranl\": \"ea quis\"\n                },\n                \"name\": \"nulla ullamco\",\n                \"nameLangTranl\": \"reprehenderit laboris mollit incididunt\"\n              },\n              \"code\": \"occaecat proident minim\",\n              \"location\": {\n                \"altitude\": -36608256,\n                \"latitude\": 14665975.870358586,\n                \"longitude\": -57592519.73748469\n              },\n              \"name\": \"id adipisicing ad\",\n              \"nameLangTranl\": \"do fugiat in\",\n              \"places\": {\n                \"aerogareCode\": \"pariatur ipsum\",\n                \"arrivalHall\": [\n                  \"sit\",\n                  \"cupidatat\"\n                ],\n                \"arrivalPositionPier\": \"est\",\n                \"arrivalPositionTerminal\": \"nulla voluptate in nostrud cillum\",\n                \"arrivalTerminal\": \"aliqua officia anim ex\",\n                \"baggageBelt\": [\n                  \"do Excepteur ipsum nisi\",\n                  \"in ut reprehenderit\"\n                ],\n                \"disembarkingAerogare\": \"pariatur\",\n                \"disembarkingBusQuantity\": \"proident id\",\n                \"disembarkingContactType\": \"officia pariatur\",\n                \"firstBagOnBeltTime\": \"1952-09-07T07:21:38.875Z\",\n                \"flightSecurityLevel\": \"cupidatat ex quis\",\n                \"gateNumber\": [\n                  \"quis ullamco laboris enim cupidatat\",\n                  \"do labore commodo dolore\"\n                ],\n                \"lastBagOnBeltTime\": \"2013-02-10T02:57:23.680Z\",\n                \"parkingPosition\": \"anim mollit sunt\",\n                \"parkingPositionCustomStatus\": \"ex\",\n                \"parkingPositionType\": \"fugia\",\n                \"pierCode\": \"ex sit Excepteur\",\n                \"terminalCode\": \"ea eiusmod qui minim\"\n              }\n            },\n            \"landingRunwayCode\": \"aute elit\",\n            \"priorityIndicator\": \"aute\",\n            \"times\": {\n              \"actual\": \"1960-12-09T19:36:32.034Z\",\n              \"actualTakeOffTime\": \"2005-02-21T20:31:50.518Z\",\n              \"actualTouchDownTime\": \"1978-07-07T14:19:27.261Z\",\n              \"aircraftOnPosition\": \"1986-06-02T10:05:38.228Z\",\n              \"departureSlotTime\": \"1948-10-27T15:30:13.809Z\",\n              \"endOfHandling\": \"1954-05-15T12:17:56.977Z\",\n              \"estimated\": {\n                \"origin\": \"dolore cillum\",\n                \"type\": \"eu sit\",\n                \"value\": \"1989-04-09T19:20:43.444Z\"\n              },\n              \"estimatedArrival\": \"1989-05-04T15:29:34.380Z\",\n              \"estimatedInternal\": \"1965-08-06T14:20:50.501Z\",\n              \"estimatedPublic\": \"1961-09-12T11:19:08.228Z\",\n              \"estimatedTakeOffTime\": \"1996-10-21T16:03:52.145Z\",\n              \"estimatedTouchDownTime\": \"2020-06-02T06:52:33.304Z\",\n              \"latestPublished\": \"1944-03-31T13:29:12.408Z\",\n              \"modified\": \"2019-01-07T13:03:38.996Z\",\n              \"scheduled\": \"1987-09-14T10:15:40.789Z\",\n              \"targetOffBlock\": \"1943-11-27T06:24:51.136Z\",\n              \"targetStartupApprovalTime\": \"2012-02-22T06:16:13.470Z\"\n            }\n          },\n          \"completionPercentage\": \"in ex dolor magna\",\n          \"departureDateTimeDifference\": \"occaecat tempor sed\",\n          \"departureInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"eu mollit\",\n                \"country\": {\n                  \"areaCode\": \"esse quis in\",\n                  \"code\": \"aute ad exerci\",\n                  \"euCountry\": \"in qui sit\",\n                  \"euroCountry\": \"anim sint\",\n                  \"name\": \"amet et \",\n                  \"nameLangTranl\": \"deserunt ex velit voluptate\"\n                },\n                \"name\": \"ea comm\",\n                \"nameLangTranl\": \"Duis ea\"\n              },\n              \"code\": \"culpa fugiat laborum mollit\",\n              \"location\": {\n                \"altitude\": 42978297,\n                \"latitude\": -30171194.711373776,\n                \"longitude\": 96865862.08416781\n              },\n              \"name\": \"in nulla\",\n              \"nameLangTranl\": \"ea dolor laboris magna\",\n              \"places\": {\n                \"aerogareCode\": \"do qui esse Ut\",\n                \"boardingBusQuantity\": \"voluptate\",\n                \"boardingContactType\": \"esse occaecat consequat\",\n                \"boardingPier\": \"pariatur nisi dolore anim ipsum\",\n                \"boardingTerminal\": \"aliqua do nostrud Lorem\",\n                \"checkInAerogare\": \"Ut in laboris\",\n                \"checkInZone\": [\n                  \"do aute in aliqua\",\n                  \"anim qui\"\n                ],\n                \"departureTerminal\": \"deserunt dolore esse\",\n                \"gateNumber\": [\n                  \"Ut dolore\",\n                  \"velit dolor pariatur\"\n                ],\n                \"parkingPosition\": \"sit occaecat ullamco est commodo\",\n                \"parkingPositionCustomStatus\": \"Excepteur\",\n                \"parkingPositionType\": \"do nisi dolore in\",\n                \"pierCode\": \"laboris culpa\",\n                \"profileLocation\": \"minim nulla quis et in\",\n                \"terminalCode\": \"cillum\"\n              }\n            },\n            \"priorityIndicator\": \"incididunt exercitation\",\n            \"takeOffRunwayCode\": \"nisi officia nostrud ut\",\n            \"times\": {\n              \"actual\": \"1973-05-29T18:52:21.360Z\",\n              \"actualTakeOffTime\": \"1979-04-27T15:41:38.070Z\",\n              \"actualTouchDownTime\": \"1960-08-30T17:58:10.461Z\",\n              \"aircraftOnPosition\": \"1995-05-17T19:07:31.526Z\",\n              \"departureSlotTime\": \"2012-01-20T11:53:21.099Z\",\n              \"endOfHandling\": \"2016-10-17T04:21:37.400Z\",\n              \"estimated\": {\n                \"origin\": \"mollit quis ipsum\",\n                \"type\": \"id elit labore\",\n                \"value\": \"1963-11-16T02:58:33.727Z\"\n              },\n              \"estimatedArrival\": \"1975-10-21T10:53:59.992Z\",\n              \"estimatedInternal\": \"2015-02-01T03:01:31.193Z\",\n              \"estimatedPublic\": \"1964-07-12T20:51:13.788Z\",\n              \"estimatedTakeOffTime\": \"1964-07-11T01:37:19.965Z\",\n              \"estimatedTouchDownTime\": \"1966-05-07T10:24:16.320Z\",\n              \"latestPublished\": \"2020-02-21T04:56:07.578Z\",\n              \"modified\": \"1985-01-14T11:07:30.404Z\",\n              \"scheduled\": \"2001-12-05T13:13:49.078Z\",\n              \"targetOffBlock\": \"2017-08-15T19:59:41.782Z\",\n              \"targetStartupApprovalTime\": \"1989-06-07T19:41:52.122Z\"\n            }\n          },\n          \"internalLegStatus\": \"laborum voluptate sit dolore consequat\",\n          \"internalLegStatusArrFocus\": true,\n          \"irregularity\": {\n            \"cancelled\": \"et Duis velit fugiat sunt\",\n            \"delayCode\": [\n              \"adipisicing officia in nulla elit\",\n              \"eiusmod aliqua\"\n            ],\n            \"delayDuration\": [\n              \"in dolore\",\n              \"fugiat in\"\n            ],\n            \"delayDurationArrival\": \"id ipsum\",\n            \"delayDurationInternal\": \"Duis do\",\n            \"delayDurationPublic\": \"sed eiusmod aute aliqua\",\n            \"delayInformation\": [\n              {\n                \"delayCode\": \"dolor eiusmod occaecat\",\n                \"delayDuration\": \"velit\",\n                \"delayReason\": \"cupidatat cillum labore\",\n                \"delayReasonCodePublic\": \"dolor officia\",\n                \"delayReasonPublicLong\": \"aliqua nisi reprehenderit\",\n                \"delayReasonPublicShort\": \"laboris occaecat\",\n                \"delaySubCode\": \"exercitation aliqua labore enim\"\n              },\n              {\n                \"delayCode\": \"sunt enim ut consectetur\",\n                \"delayDuration\": \"cupidatat\",\n                \"delayReason\": \"id lab\",\n                \"delayReasonCodePublic\": \"consequat dolore minim ut\",\n                \"delayReasonPublicLong\": \"Duis in irure\",\n                \"delayReasonPublicShort\": \"in ullamco minim consequa\",\n                \"delaySubCode\": \"adipisicing aliquip eiusmod\"\n              }\n            ],\n            \"delayNextInfoDateTime\": \"1971-12-13T09:27:43.979Z\",\n            \"delayReason\": [\n              \"incididunt eiusmod anim\",\n              \"enim esse\"\n            ],\n            \"delayReasonCodePublic\": [\n              \"commodo exerci\",\n              \"eiusmod nulla sed\"\n            ],\n            \"delayReasonPublic\": [\n              \"commodo\",\n              \"consequat\"\n            ],\n            \"delayReasonPublicLangTransl\": [\n              \"aute eiusmod sint magna non\",\n              \"sint adipisicing ut enim\"\n            ],\n            \"delaySubCode\": [\n              \"fugiat\",\n              \"pariatur nulla reprehe\"\n            ],\n            \"divertedFrom\": \"esse irure mollit\",\n            \"divertedTo\": \"nostrud dolor\",\n            \"publicDisruptionReason\": \"est ipsum sunt\",\n            \"scheduledActionCode\": \"ad qui Duis occaecat Excepteur\",\n            \"scheduledChangeReason\": \"deserunt tempor con\"\n          },\n          \"legStatusInternal\": \"Duis\",\n          \"legStatusInternalLangTransl\": \"in veniam est Ut\",\n          \"legStatusPublic\": \"ea consectetur elit\",\n          \"legStatusPublicLangTransl\": \"cupidatat aute voluptate proident\",\n          \"passengerCustomsStatus\": \"dolore\",\n          \"publishedStatus\": \"pariatur minim laboris Duis\",\n          \"scheduledFlightDuration\": \"ut dolor eu\",\n          \"serviceType\": \"\",\n          \"serviceTypeName\": \"in dolor\",\n          \"status\": \"non commodo sunt \",\n          \"statusName\": \"in Lorem nostrud mollit\",\n          \"timeToArrival\": \"in voluptate in\",\n          \"timeZoneDifference\": \"officia ex tempor\",\n          \"trajectories\": [\n            {\n              \"aircraftPositionTime\": \"1995-10-22T05:58:40.158Z\",\n              \"location\": {\n                \"altitude\": 3764137,\n                \"latitude\": 45108127.58624011,\n                \"longitude\": 12923498.261633664\n              }\n            },\n            {\n              \"aircraftPositionTime\": \"1975-11-02T17:01:16.276Z\",\n              \"location\": {\n                \"altitude\": 90703003,\n                \"latitude\": -83362749.29753573,\n                \"longitude\": 38689548.36365712\n              }\n            }\n          ]\n        }\n      ],\n      \"flightNumber\": 42178246,\n      \"flightRelations\": {\n        \"equivalentFlightData\": {\n          \"airlineCode\": \"aliqua fugiat tempor est\",\n          \"flightNumber\": \"i\",\n          \"flightScheduleDate\": \"1999-02-20\",\n          \"id\": \"reprehenderit\",\n          \"operationalSuffix\": \"quis amet do dolore et\"\n        },\n        \"onwardFlightData\": {\n          \"airlineCode\": \"ex\",\n          \"flightNumber\": \"culpa Excepteur tempor Lorem of\",\n          \"flightScheduleDate\": \"1995-05-26\",\n          \"id\": \"in aliqua nisi cillum laborum\",\n          \"operationalSuffix\": \"ex\"\n        },\n        \"previousFlightData\": {\n          \"airlineCode\": \"nostrud velit qui enim\",\n          \"flightNumber\": \"in nulla eiusmod\",\n          \"flightScheduleDate\": \"2018-02-11\",\n          \"id\": \"occaecat sit reprehenderit\",\n          \"operationalSuffix\": \"in fugiat esse\"\n        }\n      },\n      \"flightScheduleDate\": \"1975-11-24\",\n      \"flightStatusInternal\": \"cupidatat fugiat sunt in non\",\n      \"flightStatusInternalLangTransl\": \"Excepteur quis\",\n      \"flightStatusPublic\": \"in anim ea officia\",\n      \"flightStatusPublicLangTransl\": \"Excepteu\",\n      \"haul\": \"aliquip laboris elit dolore et\",\n      \"id\": \"in sint\",\n      \"internalFlightStatus\": \"proident laboris aliqua\",\n      \"internalStatusArrFocus\": false,\n      \"operationalSuffix\": \"occaecat Lorem nulla\",\n      \"route\": [\n        \"ipsum ea\",\n        \"aute Ut nostrud\"\n      ]\n    },\n    {\n      \"airline\": {\n        \"code\": \"mollit velit ea\",\n        \"name\": \"adipisicing Duis incididunt enim Excepteur\"\n      },\n      \"baseProvinceIndicator\": \"voluptate\",\n      \"codeShareRelations\": [\n        {\n          \"airline\": {\n            \"code\": \"laboris exercitation magna id\",\n            \"name\": \"in\"\n          },\n          \"code\": \"labore commo\",\n          \"flightScheduleDate\": \"2006-11-16\",\n          \"marketingFlightNumber\": -45861876,\n          \"operationalSuffix\": \"in proident irure sint\",\n          \"saleableVersion\": \"dolore elit sit commodo\",\n          \"type\": \"sit Duis aliqua enim\"\n        },\n        {\n          \"airline\": {\n            \"code\": \"commodo dolor veniam\",\n            \"name\": \"do et\"\n          },\n          \"code\": \"occaecat consectetur\",\n          \"flightScheduleDate\": \"1980-06-27\",\n          \"marketingFlightNumber\": 59436336,\n          \"operationalSuffix\": \"ex sint\",\n          \"saleableVersion\": \"Duis ad\",\n          \"type\": \"sunt veniam sint esse\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"action\": {\n            \"hostPrefix\": \"proident in ea\",\n            \"href\": \"ea ven\",\n            \"profile\": \"mollit voluptate anim\",\n            \"templated\": true,\n            \"type\": \"qui voluptate\"\n          },\n          \"code\": \"in amet\",\n          \"description\": \"sunt\",\n          \"name\": \"reprehenderit nostrud velit sed elit\",\n          \"severity\": \"ERROR\"\n        },\n        {\n          \"action\": {\n            \"hostPrefix\": \"commodo laboris sit sed\",\n            \"href\": \"ipsum irure esse dolore\",\n            \"profile\": \"adipisicing\",\n            \"templated\": true,\n            \"type\": \"Duis mollit\"\n          },\n          \"code\": \"nisi dolor\",\n          \"description\": \"laboris do et Ut\",\n          \"name\": \"aliquip consequat\",\n          \"severity\": \"ERROR\"\n        }\n      ],\n      \"flightDetailsBlocked\": true,\n      \"flightLegs\": [\n        {\n          \"aircraft\": {\n            \"cabinCrewEmployer\": \"commodo\",\n            \"cockpitCrewEmployer\": \"elit quis sit pariatur irure\",\n            \"operationalConfiguration\": \"ut\",\n            \"ownerAirlineCode\": \"cillum est mollit re\",\n            \"ownerAirlineName\": \"labore anim\",\n            \"physicalFreightConfiguration\": \"irure\",\n            \"physicalPaxConfiguration\": \"dolor sunt mollit\",\n            \"registration\": \"quis Ut sed incididunt\",\n            \"saleableConfiguration\": \"amet ad\",\n            \"subFleetCodeId\": \"id occaecat Duis est in\",\n            \"typeCode\": \"ut ullamco aliqua irure\",\n            \"typeName\": \"deserunt\",\n            \"wifiEnabled\": \"laboris esse ut\"\n          },\n          \"arrivalDateTimeDifference\": \"veniam dolor p\",\n          \"arrivalInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"velit\",\n                \"country\": {\n                  \"areaCode\": \"aliquip non\",\n                  \"code\": \"in mollit\",\n                  \"euCountry\": \"sed reprehenderit\",\n                  \"euroCountry\": \"aute aliquip enim in\",\n                  \"name\": \"consectetur proident\",\n                  \"nameLangTranl\": \"est nisi pariatur\"\n                },\n                \"name\": \"qui laboris cupidatat veniam\",\n                \"nameLangTranl\": \"exercitation\"\n              },\n              \"code\": \"Excepteur dolor sint nulla veniam\",\n              \"location\": {\n                \"altitude\": -4079962,\n                \"latitude\": 90156683.06404251,\n                \"longitude\": -53669777.49078368\n              },\n              \"name\": \"nisi in\",\n              \"nameLangTranl\": \"dolore tempor exercitation et\",\n              \"places\": {\n                \"aerogareCode\": \"culpa est laboris voluptate deserunt\",\n                \"arrivalHall\": [\n                  \"dol\",\n                  \"ullamco laboris in\"\n                ],\n                \"arrivalPositionPier\": \"ullamco deserunt velit aute\",\n                \"arrivalPositionTerminal\": \"adipisicing consectetur\",\n                \"arrivalTerminal\": \"adipisicing ex\",\n                \"baggageBelt\": [\n                  \"dolor adi\",\n                  \"ullamco ex consectetur\"\n                ],\n                \"disembarkingAerogare\": \"in labore dolore adipisicing\",\n                \"disembarkingBusQuantity\": \"irure aliqua dolor\",\n                \"disembarkingContactType\": \"aliquip sint culpa\",\n                \"firstBagOnBeltTime\": \"1956-05-29T15:07:53.621Z\",\n                \"flightSecurityLevel\": \"sint ullamco cillum\",\n                \"gateNumber\": [\n                  \"aliqua aute\",\n                  \"id aliqua cupidatat incidi\"\n                ],\n                \"lastBagOnBeltTime\": \"1982-07-18T17:33:07.246Z\",\n                \"parkingPosition\": \"Ut dolor nisi\",\n                \"parkingPositionCustomStatus\": \"sint \",\n                \"parkingPositionType\": \"deserunt sint Ut\",\n                \"pierCode\": \"mollit ea deserunt\",\n                \"terminalCode\": \"enim eu consectetur deserunt anim\"\n              }\n            },\n            \"landingRunwayCode\": \"voluptate Ut dolor\",\n            \"priorityIndicator\": \"est voluptate dolor\",\n            \"times\": {\n              \"actual\": \"1992-03-08T16:48:00.095Z\",\n              \"actualTakeOffTime\": \"1954-08-24T23:53:52.047Z\",\n              \"actualTouchDownTime\": \"2012-08-03T22:53:11.872Z\",\n              \"aircraftOnPosition\": \"2009-07-10T12:26:36.904Z\",\n              \"departureSlotTime\": \"1967-04-13T02:02:34.759Z\",\n              \"endOfHandling\": \"1982-02-11T13:17:36.390Z\",\n              \"estimated\": {\n                \"origin\": \"occaecat sit\",\n                \"type\": \"aliquip incididunt fugiat\",\n                \"value\": \"1987-02-17T06:36:13.177Z\"\n              },\n              \"estimatedArrival\": \"1979-03-01T01:58:28.333Z\",\n              \"estimatedInternal\": \"1964-08-03T18:22:35.780Z\",\n              \"estimatedPublic\": \"1961-10-31T22:08:32.708Z\",\n              \"estimatedTakeOffTime\": \"2004-03-27T09:59:39.481Z\",\n              \"estimatedTouchDownTime\": \"1998-12-27T02:27:37.843Z\",\n              \"latestPublished\": \"2004-11-14T15:03:53.668Z\",\n              \"modified\": \"1984-12-17T16:43:10.800Z\",\n              \"scheduled\": \"1955-10-26T12:28:28.791Z\",\n              \"targetOffBlock\": \"1944-01-04T06:32:05.439Z\",\n              \"targetStartupApprovalTime\": \"1985-10-07T13:48:25.487Z\"\n            }\n          },\n          \"completionPercentage\": \"dolore officia culpa do\",\n          \"departureDateTimeDifference\": \"enim\",\n          \"departureInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"aliqua ad quis Lorem\",\n                \"country\": {\n                  \"areaCode\": \"in nulla adipisicing\",\n                  \"code\": \"dolore\",\n                  \"euCountry\": \"in et enim\",\n                  \"euroCountry\": \"elit nostrud al\",\n                  \"name\": \"cillum proident esse\",\n                  \"nameLangTranl\": \"nostrud\"\n                },\n                \"name\": \"nostrud qui v\",\n                \"nameLangTranl\": \"ea\"\n              },\n              \"code\": \"occaecat ipsum proident\",\n              \"location\": {\n                \"altitude\": 23231758,\n                \"latitude\": -11600201.24832046,\n                \"longitude\": -18556680.721349135\n              },\n              \"name\": \"tempor in\",\n              \"nameLangTranl\": \"aute eiusmod \",\n              \"places\": {\n                \"aerogareCode\": \"aliquip\",\n                \"boardingBusQuantity\": \"et\",\n                \"boardingContactType\": \"commodo aliqua est in\",\n                \"boardingPier\": \"in mollit\",\n                \"boardingTerminal\": \"veniam velit Excepteur incididunt\",\n                \"checkInAerogare\": \"ex \",\n                \"checkInZone\": [\n                  \"nostrud\",\n                  \"dolor sint aliquip\"\n                ],\n                \"departureTerminal\": \"pariatur ullamco dolore\",\n                \"gateNumber\": [\n                  \"officia\",\n                  \"dolor Excepteur velit\"\n                ],\n                \"parkingPosition\": \"dolor ut occaecat\",\n                \"parkingPositionCustomStatus\": \"Ut reprehenderit\",\n                \"parkingPositionType\": \"occaecat in\",\n                \"pierCode\": \"ut eu est\",\n                \"profileLocation\": \"et dolor adipisicing occ\",\n                \"terminalCode\": \"occaecat eiusmod\"\n              }\n            },\n            \"priorityIndicator\": \"pariatur sint aliq\",\n            \"takeOffRunwayCode\": \"sunt comm\",\n            \"times\": {\n              \"actual\": \"1951-05-02T05:11:15.480Z\",\n              \"actualTakeOffTime\": \"1996-10-19T12:47:02.483Z\",\n              \"actualTouchDownTime\": \"1961-05-31T15:18:22.548Z\",\n              \"aircraftOnPosition\": \"1959-05-06T17:17:30.382Z\",\n              \"departureSlotTime\": \"2005-07-22T22:38:30.244Z\",\n              \"endOfHandling\": \"1961-04-29T16:10:24.339Z\",\n              \"estimated\": {\n                \"origin\": \"voluptate nostrud aute laborum esse\",\n                \"type\": \"exercitation dolor fugiat amet\",\n                \"value\": \"1965-06-27T01:30:33.517Z\"\n              },\n              \"estimatedArrival\": \"1945-12-05T03:23:53.461Z\",\n              \"estimatedInternal\": \"1947-08-03T15:35:31.943Z\",\n              \"estimatedPublic\": \"1969-08-16T18:19:51.471Z\",\n              \"estimatedTakeOffTime\": \"2017-04-04T15:18:47.178Z\",\n              \"estimatedTouchDownTime\": \"1981-07-14T06:01:52.486Z\",\n              \"latestPublished\": \"1959-05-22T01:10:06.371Z\",\n              \"modified\": \"1996-12-12T08:53:34.086Z\",\n              \"scheduled\": \"1951-04-08T21:26:31.264Z\",\n              \"targetOffBlock\": \"1975-01-20T09:42:21.935Z\",\n              \"targetStartupApprovalTime\": \"1974-07-23T09:49:29.121Z\"\n            }\n          },\n          \"internalLegStatus\": \"aliqua tempor cupidatat Ut\",\n          \"internalLegStatusArrFocus\": true,\n          \"irregularity\": {\n            \"cancelled\": \"c\",\n            \"delayCode\": [\n              \"cillum exercitation incididunt\",\n              \"laborum incidi\"\n            ],\n            \"delayDuration\": [\n              \"in irure esse\",\n              \"dolor ipsum non consectetur culpa\"\n            ],\n            \"delayDurationArrival\": \"proident Excepteur ex\",\n            \"delayDurationInternal\": \"commodo nisi quis\",\n            \"delayDurationPublic\": \"anim ullamco aliquip\",\n            \"delayInformation\": [\n              {\n                \"delayCode\": \"ip\",\n                \"delayDuration\": \"ad aute amet proident\",\n                \"delayReason\": \"qui id\",\n                \"delayReasonCodePublic\": \"Ut velit Excepteur\",\n                \"delayReasonPublicLong\": \"dolor laborum id\",\n                \"delayReasonPublicShort\": \"nulla\",\n                \"delaySubCode\": \"in aliqua enim\"\n              },\n              {\n                \"delayCode\": \"Duis non ad tempor laboris\",\n                \"delayDuration\": \"in ut elit\",\n                \"delayReason\": \"cupidatat consequat fugiat\",\n                \"delayReasonCodePublic\": \"elit exercitation labo\",\n                \"delayReasonPublicLong\": \"tempor cillum magna ullamco\",\n                \"delayReasonPublicShort\": \"ad sunt\",\n                \"delaySubCode\": \"sed in\"\n              }\n            ],\n            \"delayNextInfoDateTime\": \"2022-01-30T14:55:43.645Z\",\n            \"delayReason\": [\n              \"tempor non adipisicing veniam\",\n              \"anim exercitation \"\n            ],\n            \"delayReasonCodePublic\": [\n              \"eius\",\n              \"officia ut deserunt\"\n            ],\n            \"delayReasonPublic\": [\n              \"Ut minim sed culpa\",\n              \"ullamco in\"\n            ],\n            \"delayReasonPublicLangTransl\": [\n              \"minim consectetur ali\",\n              \"adipisicing non ut\"\n            ],\n            \"delaySubCode\": [\n              \"fugiat laboris\",\n              \"laborum eiusmod\"\n            ],\n            \"divertedFrom\": \"dolor consectetur laboris do eu\",\n            \"divertedTo\": \"quis voluptate sunt sed pariatur\",\n            \"publicDisruptionReason\": \"veniam cillum\",\n            \"scheduledActionCode\": \"n\",\n            \"scheduledChangeReason\": \"cillum et\"\n          },\n          \"legStatusInternal\": \"deserunt ad Excepteur Lorem\",\n          \"legStatusInternalLangTransl\": \"consequat incididunt tempor id non\",\n          \"legStatusPublic\": \"\",\n          \"legStatusPublicLangTransl\": \"magna in laboris\",\n          \"passengerCustomsStatus\": \"quis in aliquip\",\n          \"publishedStatus\": \"consectetur consequat aliqua qui\",\n          \"scheduledFlightDuration\": \"qui fugiat eiusmod voluptate deserunt\",\n          \"serviceType\": \"amet\",\n          \"serviceTypeName\": \"exercitation\",\n          \"status\": \"exercitation consequat\",\n          \"statusName\": \"deserunt aliquip Ut\",\n          \"timeToArrival\": \"non\",\n          \"timeZoneDifference\": \"magna voluptate\",\n          \"trajectories\": [\n            {\n              \"aircraftPositionTime\": \"2009-01-12T19:41:08.946Z\",\n              \"location\": {\n                \"altitude\": 43814813,\n                \"latitude\": -88618895.84972355,\n                \"longitude\": 85723959.50895023\n              }\n            },\n            {\n              \"aircraftPositionTime\": \"1997-02-13T11:05:55.212Z\",\n              \"location\": {\n                \"altitude\": 64124923,\n                \"latitude\": -44178766.73269681,\n                \"longitude\": -22022311.277182594\n              }\n            }\n          ]\n        },\n        {\n          \"aircraft\": {\n            \"cabinCrewEmployer\": \"sit\",\n            \"cockpitCrewEmployer\": \"qui\",\n            \"operationalConfiguration\": \"sint exercitation culpa irure\",\n            \"ownerAirlineCode\": \"pariatur exercitation\",\n            \"ownerAirlineName\": \"exerci\",\n            \"physicalFreightConfiguration\": \"in\",\n            \"physicalPaxConfiguration\": \"id incididunt laboris nulla\",\n            \"registration\": \"fugiat consectetur magna ani\",\n            \"saleableConfiguration\": \"proident esse voluptate fugiat\",\n            \"subFleetCodeId\": \"deserunt voluptate do\",\n            \"typeCode\": \"cillum esse aute ea laboris\",\n            \"typeName\": \"ex labore\",\n            \"wifiEnabled\": \"magna\"\n          },\n          \"arrivalDateTimeDifference\": \"est occaecat tempor eu\",\n          \"arrivalInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"eiusmod in\",\n                \"country\": {\n                  \"areaCode\": \"culpa magna\",\n                  \"code\": \"quis sed nostrud\",\n                  \"euCountry\": \"aliquip aute dolor tempor magna\",\n                  \"euroCountry\": \"\",\n                  \"name\": \"reprehenderit dolore\",\n                  \"nameLangTranl\": \"officia\"\n                },\n                \"name\": \"Lor\",\n                \"nameLangTranl\": \"officia voluptate\"\n              },\n              \"code\": \"quis minim ut sunt labore\",\n              \"location\": {\n                \"altitude\": 88833223,\n                \"latitude\": -54525353.09970323,\n                \"longitude\": 21971760.136065036\n              },\n              \"name\": \"elit dolore aute fugiat nisi\",\n              \"nameLangTranl\": \"in ad\",\n              \"places\": {\n                \"aerogareCode\": \"consectetur ipsum\",\n                \"arrivalHall\": [\n                  \"est laborum\",\n                  \"in officia voluptate ut\"\n                ],\n                \"arrivalPositionPier\": \"ut quis eiusmod aute\",\n                \"arrivalPositionTerminal\": \"laborum id\",\n                \"arrivalTerminal\": \"veniam nulla dolore laboris fugiat\",\n                \"baggageBelt\": [\n                  \"sit\",\n                  \"cillum esse laborum sunt ipsum\"\n                ],\n                \"disembarkingAerogare\": \"exercitatio\",\n                \"disembarkingBusQuantity\": \"dolor ullamco sunt esse\",\n                \"disembarkingContactType\": \"nulla eiusmod cillum elit anim\",\n                \"firstBagOnBeltTime\": \"1998-01-29T13:53:15.014Z\",\n                \"flightSecurityLevel\": \"et magna\",\n                \"gateNumber\": [\n                  \"in dolor nisi\",\n                  \"in amet fugiat\"\n                ],\n                \"lastBagOnBeltTime\": \"2021-10-18T18:06:38.898Z\",\n                \"parkingPosition\": \"quis mollit id eiusmod\",\n                \"parkingPositionCustomStatus\": \"ullamco culpa ex\",\n                \"parkingPositionType\": \"in anim Duis\",\n                \"pierCode\": \"in quis sunt laborum\",\n                \"terminalCode\": \"velit ad nulla commodo dolore\"\n              }\n            },\n            \"landingRunwayCode\": \"ut\",\n            \"priorityIndicator\": \"Lorem non\",\n            \"times\": {\n              \"actual\": \"1953-05-24T19:35:10.496Z\",\n              \"actualTakeOffTime\": \"1991-04-14T07:08:47.889Z\",\n              \"actualTouchDownTime\": \"1994-04-29T20:51:00.743Z\",\n              \"aircraftOnPosition\": \"1967-12-31T14:35:16.955Z\",\n              \"departureSlotTime\": \"1955-09-06T22:39:21.881Z\",\n              \"endOfHandling\": \"1952-07-13T09:33:47.598Z\",\n              \"estimated\": {\n                \"origin\": \"aute ex\",\n                \"type\": \"ut id Excepteur ex\",\n                \"value\": \"1989-03-10T10:10:48.465Z\"\n              },\n              \"estimatedArrival\": \"2020-10-31T14:42:08.686Z\",\n              \"estimatedInternal\": \"1966-10-15T09:40:08.247Z\",\n              \"estimatedPublic\": \"1959-12-04T15:27:42.576Z\",\n              \"estimatedTakeOffTime\": \"2019-07-27T03:15:33.055Z\",\n              \"estimatedTouchDownTime\": \"1953-09-05T12:49:24.667Z\",\n              \"latestPublished\": \"2019-04-19T16:46:07.707Z\",\n              \"modified\": \"1983-11-28T23:41:35.878Z\",\n              \"scheduled\": \"1973-12-07T21:23:00.596Z\",\n              \"targetOffBlock\": \"1983-06-01T15:37:24.296Z\",\n              \"targetStartupApprovalTime\": \"2017-03-09T04:12:41.963Z\"\n            }\n          },\n          \"completionPercentage\": \"culpa\",\n          \"departureDateTimeDifference\": \"in\",\n          \"departureInformation\": {\n            \"airport\": {\n              \"city\": {\n                \"code\": \"pariatur dolor\",\n                \"country\": {\n                  \"areaCode\": \"magna\",\n                  \"code\": \"ullamco in mollit ipsum\",\n                  \"euCountry\": \"eiusmod proident ex\",\n                  \"euroCountry\": \"cillum do in\",\n                  \"name\": \"ut irure\",\n                  \"nameLangTranl\": \"mollit reprehenderit\"\n                },\n                \"name\": \"amet esse aliqua\",\n                \"nameLangTranl\": \"ullamco labore cillum quis nisi\"\n              },\n              \"code\": \"dolor ut\",\n              \"location\": {\n                \"altitude\": 34565596,\n                \"latitude\": -36822089.5979182,\n                \"longitude\": -44958712.36301441\n              },\n              \"name\": \"eiusmod officia\",\n              \"nameLangTranl\": \"veniam cupidatat culpa\",\n              \"places\": {\n                \"aerogareCode\": \"commodo qui\",\n                \"boardingBusQuantity\": \"nostrud\",\n                \"boardingContactType\": \"ipsum do sint aliqua\",\n                \"boardingPier\": \"veniam dol\",\n                \"boardingTerminal\": \"voluptate tempor Ut irure Excepteur\",\n                \"checkInAerogare\": \"eiusmod ullamco offici\",\n                \"checkInZone\": [\n                  \"exercitation commodo dolore officia\",\n                  \"ad occaecat non est\"\n                ],\n                \"departureTerminal\": \"ullamco nostrud\",\n                \"gateNumber\": [\n                  \"aute m\",\n                  \"ipsum\"\n                ],\n                \"parkingPosition\": \"aliquip\",\n                \"parkingPositionCustomStatus\": \"laboris ex pariatur\",\n                \"parkingPositionType\": \"consequat\",\n                \"pierCode\": \"in deserunt dolore incididunt\",\n                \"profileLocation\": \"sunt ut Duis adipisicing\",\n                \"terminalCode\": \"aute deserunt\"\n              }\n            },\n            \"priorityIndicator\": \"ad et dolore\",\n            \"takeOffRunwayCode\": \"exercitation incididunt\",\n            \"times\": {\n              \"actual\": \"1944-01-30T07:43:43.813Z\",\n              \"actualTakeOffTime\": \"2021-04-29T02:21:05.416Z\",\n              \"actualTouchDownTime\": \"1963-09-08T00:24:11.268Z\",\n              \"aircraftOnPosition\": \"2004-04-03T17:42:29.414Z\",\n              \"departureSlotTime\": \"1996-06-28T08:11:33.177Z\",\n              \"endOfHandling\": \"2008-02-09T18:28:38.253Z\",\n              \"estimated\": {\n                \"origin\": \"Duis tempor nulla sunt\",\n                \"type\": \"aliqua consectetur enim eu Excepteur\",\n                \"value\": \"1975-03-20T08:24:23.627Z\"\n              },\n              \"estimatedArrival\": \"1994-02-16T20:26:19.572Z\",\n              \"estimatedInternal\": \"1982-07-06T02:57:54.712Z\",\n              \"estimatedPublic\": \"1988-06-18T01:09:34.823Z\",\n              \"estimatedTakeOffTime\": \"2019-04-13T04:06:16.108Z\",\n              \"estimatedTouchDownTime\": \"1996-02-12T08:57:03.420Z\",\n              \"latestPublished\": \"1958-10-03T04:35:38.128Z\",\n              \"modified\": \"2007-03-25T15:05:07.813Z\",\n              \"scheduled\": \"1954-05-26T15:31:13.919Z\",\n              \"targetOffBlock\": \"1958-06-28T06:22:48.253Z\",\n              \"targetStartupApprovalTime\": \"2012-11-27T23:34:27.193Z\"\n            }\n          },\n          \"internalLegStatus\": \"dolor qui\",\n          \"internalLegStatusArrFocus\": false,\n          \"irregularity\": {\n            \"cancelled\": \"dolor eiusmod ea irure\",\n            \"delayCode\": [\n              \"tempor consequat ex\",\n              \"elit Ut ad exercitation amet\"\n            ],\n            \"delayDuration\": [\n              \"dolore Excepteur deser\",\n              \"ex s\"\n            ],\n            \"delayDurationArrival\": \"eu dolor Lorem incididunt in\",\n            \"delayDurationInternal\": \"cillum enim dolore anim do\",\n            \"delayDurationPublic\": \"enim sunt quis amet\",\n            \"delayInformation\": [\n              {\n                \"delayCode\": \"quis adipisicing Ut labore ipsum\",\n                \"delayDuration\": \"dolor\",\n                \"delayReason\": \"ut incididunt in\",\n                \"delayReasonCodePublic\": \"dolor sit esse dolore incididunt\",\n                \"delayReasonPublicLong\": \"et\",\n                \"delayReasonPublicShort\": \"sed cillum\",\n                \"delaySubCode\": \"cillum aute ad laboris\"\n              },\n              {\n                \"delayCode\": \"anim incididunt minim\",\n                \"delayDuration\": \"adipisicing ex officia\",\n                \"delayReason\": \"cillum aliqua\",\n                \"delayReasonCodePublic\": \"Lorem magna ullamc\",\n                \"delayReasonPublicLong\": \"irure ut laboris\",\n                \"delayReasonPublicShort\": \"dolore dolore veniam laboris\",\n                \"delaySubCode\": \"pariatur anim nulla qui Ut\"\n              }\n            ],\n            \"delayNextInfoDateTime\": \"1984-06-21T15:54:06.944Z\",\n            \"delayReason\": [\n              \"consequat sunt reprehenderit\",\n              \"anim Duis\"\n            ],\n            \"delayReasonCodePublic\": [\n              \"sit do ullamco\",\n              \"sed nisi aliqua aliquip\"\n            ],\n            \"delayReasonPublic\": [\n              \"dolore ut dolor dolor\",\n              \"enim ea voluptate\"\n            ],\n            \"delayReasonPublicLangTransl\": [\n              \"laborum veniam\",\n              \"esse adip\"\n            ],\n            \"delaySubCode\": [\n              \"enim velit labore m\",\n              \"consequat quis\"\n            ],\n            \"divertedFrom\": \"laboris exercitation\",\n            \"divertedTo\": \"id pariatur\",\n            \"publicDisruptionReason\": \"et in Lorem\",\n            \"scheduledActionCode\": \"id labore ut deserunt nostrud\",\n            \"scheduledChangeReason\": \"cupid\"\n          },\n          \"legStatusInternal\": \"amet ullamco\",\n          \"legStatusInternalLangTransl\": \"velit\",\n          \"legStatusPublic\": \"ut veniam amet\",\n          \"legStatusPublicLangTransl\": \"offi\",\n          \"passengerCustomsStatus\": \"nulla proident sint ut Duis\",\n          \"publishedStatus\": \"dolore ad\",\n          \"scheduledFlightDuration\": \"dolore enim\",\n          \"serviceType\": \"aute deserunt qui\",\n          \"serviceTypeName\": \"ipsum Lorem proident\",\n          \"status\": \"laborum in labore \",\n          \"statusName\": \"sed magna cupidatat\",\n          \"timeToArrival\": \"in velit\",\n          \"timeZoneDifference\": \"nulla consequat fugiat\",\n          \"trajectories\": [\n            {\n              \"aircraftPositionTime\": \"1987-09-17T19:21:38.532Z\",\n              \"location\": {\n                \"altitude\": -52892630,\n                \"latitude\": -63809289.943852976,\n                \"longitude\": -65148201.727698885\n              }\n            },\n            {\n              \"aircraftPositionTime\": \"1992-08-17T22:01:41.738Z\",\n              \"location\": {\n                \"altitude\": 4242823,\n                \"latitude\": -62085824.22865794,\n                \"longitude\": 2165829.9602253586\n              }\n            }\n          ]\n        }\n      ],\n      \"flightNumber\": -40235520,\n      \"flightRelations\": {\n        \"equivalentFlightData\": {\n          \"airlineCode\": \"sit commodo deserunt\",\n          \"flightNumber\": \"et aliqua mollit\",\n          \"flightScheduleDate\": \"2015-08-08\",\n          \"id\": \"Lorem dolore dolore dolor\",\n          \"operationalSuffix\": \"ut voluptate ex culpa\"\n        },\n        \"onwardFlightData\": {\n          \"airlineCode\": \"aute cillum minim\",\n          \"flightNumber\": \"ut anim ex\",\n          \"flightScheduleDate\": \"1969-02-24\",\n          \"id\": \"ea amet id\",\n          \"operationalSuffix\": \"fugiat esse do\"\n        },\n        \"previousFlightData\": {\n          \"airlineCode\": \"l\",\n          \"flightNumber\": \"ad proident Ut\",\n          \"flightScheduleDate\": \"1974-01-17\",\n          \"id\": \"laboris et velit dolore\",\n          \"operationalSuffix\": \"in dolore\"\n        }\n      },\n      \"flightScheduleDate\": \"1994-02-13\",\n      \"flightStatusInternal\": \"nisi nulla adipisicing\",\n      \"flightStatusInternalLangTransl\": \"ut mollit velit nostrud\",\n      \"flightStatusPublic\": \"voluptate veniam\",\n      \"flightStatusPublicLangTransl\": \"sunt cillum vel\",\n      \"haul\": \"sed Ut Duis\",\n      \"id\": \"non sunt an\",\n      \"internalFlightStatus\": \"et Excepteur\",\n      \"internalStatusArrFocus\": true,\n      \"operationalSuffix\": \"cupidatat ex eu do\",\n      \"route\": [\n        \"voluptate et Lorem Duis cupidatat\",\n        \"Lorem ut aliquip quis\"\n      ]\n    }\n  ],\n  \"page\": {\n    \"fullCount\": -18725821,\n    \"pageCount\": 61285011,\n    \"pageNumber\": -88537113,\n    \"pageSize\": 66670268,\n    \"totalPages\": -23590616\n  }\n}"
+						},
+						{
+							"id": "7dc2e48c-0889-492f-b0d2-4d6a01bd15e5",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=do irure incididunt exercitation&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=do irure incididunt exercitation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights"
+									],
+									"query": [
+										{
+											"description": "date time of start range",
+											"key": "startRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "date time of end range",
+											"key": "endRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "indicates that range applies to origin or destination",
+											"key": "movementType",
+											"value": "A"
+										},
+										{
+											"description": "indicates on which date time to query on",
+											"key": "timeOriginType",
+											"value": "I"
+										},
+										{
+											"description": "indicates that given range is UTC or LOCAL",
+											"key": "timeType",
+											"value": "U"
+										},
+										{
+											"description": "IATA airport code of departure",
+											"key": "origin",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of departure",
+											"key": "departureCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airport code of arrival",
+											"key": "destination",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of arrival",
+											"key": "arrivalCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airline code",
+											"key": "carrierCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "IATA operating airline codes",
+											"key": "operatingAirlineCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "flight number which is four digits long, when smaller prefix with zero",
+											"key": "flightNumber",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+											"key": "operationalSuffix",
+											"value": "A"
+										},
+										{
+											"description": "filter on aircraft registration",
+											"key": "aircraftRegistration",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "filter on aircraft type",
+											"key": "aircraftType",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "indicates the number of elements the page will contain",
+											"key": "pageSize",
+											"value": "NaN"
+										},
+										{
+											"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+											"key": "pageNumber",
+											"value": "36010431"
+										},
+										{
+											"description": "serviceType search",
+											"key": "serviceType",
+											"value": "do irure incididunt exercitation"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "bb3b349c-122a-4f20-aa68-0ef98f9055dc",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=do irure incididunt exercitation&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=do irure incididunt exercitation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights"
+									],
+									"query": [
+										{
+											"description": "date time of start range",
+											"key": "startRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "date time of end range",
+											"key": "endRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "indicates that range applies to origin or destination",
+											"key": "movementType",
+											"value": "A"
+										},
+										{
+											"description": "indicates on which date time to query on",
+											"key": "timeOriginType",
+											"value": "I"
+										},
+										{
+											"description": "indicates that given range is UTC or LOCAL",
+											"key": "timeType",
+											"value": "U"
+										},
+										{
+											"description": "IATA airport code of departure",
+											"key": "origin",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of departure",
+											"key": "departureCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airport code of arrival",
+											"key": "destination",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of arrival",
+											"key": "arrivalCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airline code",
+											"key": "carrierCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "IATA operating airline codes",
+											"key": "operatingAirlineCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "flight number which is four digits long, when smaller prefix with zero",
+											"key": "flightNumber",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+											"key": "operationalSuffix",
+											"value": "A"
+										},
+										{
+											"description": "filter on aircraft registration",
+											"key": "aircraftRegistration",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "filter on aircraft type",
+											"key": "aircraftType",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "indicates the number of elements the page will contain",
+											"key": "pageSize",
+											"value": "NaN"
+										},
+										{
+											"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+											"key": "pageNumber",
+											"value": "36010431"
+										},
+										{
+											"description": "serviceType search",
+											"key": "serviceType",
+											"value": "do irure incididunt exercitation"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "0bc6aadd-87fb-451d-b1d3-04a2954687bb",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=do irure incididunt exercitation&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=do irure incididunt exercitation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights"
+									],
+									"query": [
+										{
+											"description": "date time of start range",
+											"key": "startRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "date time of end range",
+											"key": "endRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "indicates that range applies to origin or destination",
+											"key": "movementType",
+											"value": "A"
+										},
+										{
+											"description": "indicates on which date time to query on",
+											"key": "timeOriginType",
+											"value": "I"
+										},
+										{
+											"description": "indicates that given range is UTC or LOCAL",
+											"key": "timeType",
+											"value": "U"
+										},
+										{
+											"description": "IATA airport code of departure",
+											"key": "origin",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of departure",
+											"key": "departureCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airport code of arrival",
+											"key": "destination",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of arrival",
+											"key": "arrivalCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airline code",
+											"key": "carrierCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "IATA operating airline codes",
+											"key": "operatingAirlineCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "flight number which is four digits long, when smaller prefix with zero",
+											"key": "flightNumber",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+											"key": "operationalSuffix",
+											"value": "A"
+										},
+										{
+											"description": "filter on aircraft registration",
+											"key": "aircraftRegistration",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "filter on aircraft type",
+											"key": "aircraftType",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "indicates the number of elements the page will contain",
+											"key": "pageSize",
+											"value": "NaN"
+										},
+										{
+											"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+											"key": "pageNumber",
+											"value": "36010431"
+										},
+										{
+											"description": "serviceType search",
+											"key": "serviceType",
+											"value": "do irure incididunt exercitation"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "89c88d9b-3f03-4b05-8ed6-adbdbc7fe4e4",
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+										"key": "Accept-Language",
+										"value": "en-GB"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/flights?startRange=1946-12-09T10:39:06.188Z&endRange=1946-12-09T10:39:06.188Z&movementType=A&timeOriginType=I&timeType=U&origin=dolor incididunt est&departureCity=dolor incididunt est&destination=dolor incididunt est&arrivalCity=dolor incididunt est&consumerHost=dolor incididunt est&carrierCode=do irure incididunt exercitation&operatingAirlineCode=do irure incididunt exercitation&flightNumber=dolor incididunt est&operationalSuffix=A&aircraftRegistration=dolor incididunt est&aircraftType=dolor incididunt est&pageSize=NaN&pageNumber=36010431&serviceType=do irure incididunt exercitation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"flights"
+									],
+									"query": [
+										{
+											"description": "date time of start range",
+											"key": "startRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "date time of end range",
+											"key": "endRange",
+											"value": "1946-12-09T10:39:06.188Z"
+										},
+										{
+											"description": "indicates that range applies to origin or destination",
+											"key": "movementType",
+											"value": "A"
+										},
+										{
+											"description": "indicates on which date time to query on",
+											"key": "timeOriginType",
+											"value": "I"
+										},
+										{
+											"description": "indicates that given range is UTC or LOCAL",
+											"key": "timeType",
+											"value": "U"
+										},
+										{
+											"description": "IATA airport code of departure",
+											"key": "origin",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of departure",
+											"key": "departureCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airport code of arrival",
+											"key": "destination",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA city code of arrival",
+											"key": "arrivalCity",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "consumer Host",
+											"key": "consumerHost",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "IATA airline code",
+											"key": "carrierCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "IATA operating airline codes",
+											"key": "operatingAirlineCode",
+											"value": "do irure incididunt exercitation"
+										},
+										{
+											"description": "flight number which is four digits long, when smaller prefix with zero",
+											"key": "flightNumber",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+											"key": "operationalSuffix",
+											"value": "A"
+										},
+										{
+											"description": "filter on aircraft registration",
+											"key": "aircraftRegistration",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "filter on aircraft type",
+											"key": "aircraftType",
+											"value": "dolor incididunt est"
+										},
+										{
+											"description": "indicates the number of elements the page will contain",
+											"key": "pageSize",
+											"value": "NaN"
+										},
+										{
+											"description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+											"key": "pageNumber",
+											"value": "36010431"
+										},
+										{
+											"description": "serviceType search",
+											"key": "serviceType",
+											"value": "do irure incididunt exercitation"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "4df1fd18-96bc-4f99-82f0-f2ad3a35fa21"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7bfce8bd-76e3-4950-9e7a-159c063628f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3fb4d44e-fdf6-450f-a6dd-995b5976a525",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bb31c86c-cef9-41d2-9c89-c0f2e8af0c9e",
+			"key": "baseUrl",
+			"value": "//localhost:8081/flightstatus"
+		}
+	]
+}
