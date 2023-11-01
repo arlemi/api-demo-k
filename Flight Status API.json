@@ -1,0 +1,1213 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "The Flight Status API provides flight information like: the flight route, per leg the departure and arrival information, airport locations related to the arrival and departure times, information on irregularities (delay, cancellation, etc.)",
+    "version": "v1",
+    "title": "Flight Status API",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "operational-flight-controller",
+      "description": "Operational Flight Controller"
+    }
+  ],
+  "paths": {
+    "/flights": {
+      "get": {
+        "tags": [
+          "flights"
+        ],
+        "summary": "get flights",
+        "operationId": "getFlights",
+        "parameters": [
+          {
+            "name": "startRange",
+            "in": "query",
+            "description": "date time of start range",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endRange",
+            "in": "query",
+            "description": "date time of end range",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "movementType",
+            "in": "query",
+            "description": "indicates that range applies to origin or destination",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "A",
+                "D"
+              ]
+            }
+          },
+          {
+            "name": "timeOriginType",
+            "in": "query",
+            "description": "indicates on which date time to query on",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "S",
+                "M",
+                "I",
+                "P"
+              ]
+            }
+          },
+          {
+            "name": "timeType",
+            "in": "query",
+            "description": "indicates that given range is UTC or LOCAL",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "U",
+                "L"
+              ]
+            }
+          },
+          {
+            "name": "origin",
+            "in": "query",
+            "description": "IATA airport code of departure",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "departureCity",
+            "in": "query",
+            "description": "IATA city code of departure",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "description": "IATA airport code of arrival",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "arrivalCity",
+            "in": "query",
+            "description": "IATA city code of arrival",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "consumerHost",
+            "in": "query",
+            "description": "consumer Host",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "carrierCode",
+            "in": "query",
+            "description": "IATA airline code",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "operatingAirlineCode",
+            "in": "query",
+            "description": "IATA operating airline codes",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "flightNumber",
+            "in": "query",
+            "description": "flight number which is four digits long, when smaller prefix with zero",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operationalSuffix",
+            "in": "query",
+            "description": "operational suffix, indicates if a flight has been advanced or delayed to the previous or next day",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "A",
+                "D"
+              ]
+            }
+          },
+          {
+            "name": "aircraftRegistration",
+            "in": "query",
+            "description": "filter on aircraft registration",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aircraftType",
+            "in": "query",
+            "description": "filter on aircraft type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "indicates the number of elements the page will contain",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                "min=0 to max=100"
+              ]
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "indicates the page number you are requesting, the first page is page 0. If it's not provided first page will be returned",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "indicates the language you are requesting. If it's not provided default language 'en-GB' will be consider",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en-GB"
+            }
+          },
+          {
+            "name": "serviceType",
+            "in": "query",
+            "description": "serviceType search",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "Accept",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "V1",
+                "V2",
+                "V3",
+                "INVALID"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlightsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/flights/{flightDate}": {
+      "get": {
+        "tags": [
+          "flights"
+        ],
+        "summary": "get flight status details",
+        "operationId": "getFlightStatus",
+        "parameters": [
+          {
+            "name": "flightDate",
+            "in": "path",
+            "description": "id of the flight",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "consumerHost",
+            "in": "query",
+            "description": "consumer Host",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "expand with additional flight information",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "trajectory"
+              ]
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "indicates the language you are requesting. If it's not provided defatult language 'en-GB' will be consider",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en-GB"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "Accept",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "V1",
+                "V2",
+                "V3",
+                "INVALID"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationalFlight"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "//localhost:8081/flightstatus"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "FlightsResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          },
+          "operationalFlights": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OperationalFlight"
+            }
+          },
+          "page": {
+            "$ref": "#/components/schemas/PageResponse"
+          }
+        }
+      },
+      "ArrivalAirport": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/City"
+          },
+          "code": {
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nameLangTranl": {
+            "type": "string"
+          },
+          "places": {
+            "$ref": "#/components/schemas/ArrivalPlaces"
+          }
+        }
+      },
+      "Airline": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Irregularity": {
+        "type": "object",
+        "properties": {
+          "cancelled": {
+            "type": "string"
+          },
+          "delayCode": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delayDuration": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delayDurationArrival": {
+            "type": "string"
+          },
+          "delayDurationInternal": {
+            "type": "string"
+          },
+          "delayDurationPublic": {
+            "type": "string"
+          },
+          "delayInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DelayInformation"
+            }
+          },
+          "delayNextInfoDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "delayReason": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delayReasonCodePublic": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delayReasonPublic": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delayReasonPublicLangTransl": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delaySubCode": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "divertedFrom": {
+            "type": "string"
+          },
+          "divertedTo": {
+            "type": "string"
+          },
+          "publicDisruptionReason": {
+            "type": "string"
+          },
+          "scheduledActionCode": {
+            "type": "string"
+          },
+          "scheduledChangeReason": {
+            "type": "string"
+          }
+        }
+      },
+      "FlightLeg": {
+        "type": "object",
+        "properties": {
+          "aircraft": {
+            "$ref": "#/components/schemas/Aircraft"
+          },
+          "arrivalDateTimeDifference": {
+            "type": "string",
+            "description": "The format is ISO8601 time interval"
+          },
+          "arrivalInformation": {
+            "$ref": "#/components/schemas/ArrivalInformation"
+          },
+          "completionPercentage": {
+            "type": "string"
+          },
+          "departureDateTimeDifference": {
+            "type": "string",
+            "description": "The format is ISO8601 time interval"
+          },
+          "departureInformation": {
+            "$ref": "#/components/schemas/DepartureInformation"
+          },
+          "internalLegStatus": {
+            "type": "string"
+          },
+          "internalLegStatusArrFocus": {
+            "type": "boolean"
+          },
+          "irregularity": {
+            "$ref": "#/components/schemas/Irregularity"
+          },
+          "legStatusInternal": {
+            "type": "string"
+          },
+          "legStatusInternalLangTransl": {
+            "type": "string"
+          },
+          "legStatusPublic": {
+            "type": "string"
+          },
+          "legStatusPublicLangTransl": {
+            "type": "string"
+          },
+          "passengerCustomsStatus": {
+            "type": "string"
+          },
+          "publishedStatus": {
+            "type": "string"
+          },
+          "scheduledFlightDuration": {
+            "type": "string",
+            "description": "The format is ISO8601 time interval"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceTypeName": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "statusName": {
+            "type": "string"
+          },
+          "timeToArrival": {
+            "type": "string",
+            "description": "The format is ISO8601 time interval"
+          },
+          "timeZoneDifference": {
+            "type": "string"
+          },
+          "trajectories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trajectory"
+            }
+          }
+        }
+      },
+      "OperationalFlight": {
+        "type": "object",
+        "properties": {
+          "airline": {
+            "$ref": "#/components/schemas/Airline"
+          },
+          "baseProvinceIndicator": {
+            "type": "string"
+          },
+          "codeShareRelations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CodeShareRelation"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          },
+          "flightDetailsBlocked": {
+            "type": "boolean"
+          },
+          "flightLegs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlightLeg"
+            }
+          },
+          "flightNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flightRelations": {
+            "$ref": "#/components/schemas/FlightRelations"
+          },
+          "flightScheduleDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "flightStatusInternal": {
+            "type": "string"
+          },
+          "flightStatusInternalLangTransl": {
+            "type": "string"
+          },
+          "flightStatusPublic": {
+            "type": "string"
+          },
+          "flightStatusPublicLangTransl": {
+            "type": "string"
+          },
+          "haul": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "internalFlightStatus": {
+            "type": "string"
+          },
+          "internalStatusArrFocus": {
+            "type": "boolean"
+          },
+          "operationalSuffix": {
+            "type": "string"
+          },
+          "route": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DeparturePlaces": {
+        "type": "object",
+        "properties": {
+          "aerogareCode": {
+            "type": "string"
+          },
+          "boardingBusQuantity": {
+            "type": "string"
+          },
+          "boardingContactType": {
+            "type": "string"
+          },
+          "boardingPier": {
+            "type": "string"
+          },
+          "boardingTerminal": {
+            "type": "string"
+          },
+          "checkInAerogare": {
+            "type": "string"
+          },
+          "checkInZone": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "departureTerminal": {
+            "type": "string"
+          },
+          "gateNumber": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parkingPosition": {
+            "type": "string"
+          },
+          "parkingPositionCustomStatus": {
+            "type": "string"
+          },
+          "parkingPositionType": {
+            "type": "string"
+          },
+          "pierCode": {
+            "type": "string"
+          },
+          "profileLocation": {
+            "type": "string"
+          },
+          "terminalCode": {
+            "type": "string"
+          }
+        }
+      },
+      "CodeShareRelation": {
+        "type": "object",
+        "properties": {
+          "airline": {
+            "$ref": "#/components/schemas/Airline"
+          },
+          "code": {
+            "type": "string"
+          },
+          "flightScheduleDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "marketingFlightNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "operationalSuffix": {
+            "type": "string"
+          },
+          "saleableVersion": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "PageResponse": {
+        "type": "object",
+        "properties": {
+          "fullCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Estimated": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Trajectory": {
+        "type": "object",
+        "properties": {
+          "aircraftPositionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          }
+        }
+      },
+      "DepartureAirport": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/City"
+          },
+          "code": {
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nameLangTranl": {
+            "type": "string"
+          },
+          "places": {
+            "$ref": "#/components/schemas/DeparturePlaces"
+          }
+        }
+      },
+      "ArrivalInformation": {
+        "type": "object",
+        "properties": {
+          "airport": {
+            "$ref": "#/components/schemas/ArrivalAirport"
+          },
+          "landingRunwayCode": {
+            "type": "string"
+          },
+          "priorityIndicator": {
+            "type": "string"
+          },
+          "times": {
+            "$ref": "#/components/schemas/LegTimes"
+          }
+        }
+      },
+      "DepartureInformation": {
+        "type": "object",
+        "properties": {
+          "airport": {
+            "$ref": "#/components/schemas/DepartureAirport"
+          },
+          "priorityIndicator": {
+            "type": "string"
+          },
+          "takeOffRunwayCode": {
+            "type": "string"
+          },
+          "times": {
+            "$ref": "#/components/schemas/LegTimes"
+          }
+        }
+      },
+      "HyperMediaLink": {
+        "type": "object",
+        "properties": {
+          "hostPrefix": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          },
+          "profile": {
+            "type": "string"
+          },
+          "templated": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "City": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nameLangTranl": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/HyperMediaLink"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "ERROR",
+              "WARNING",
+              "INFO"
+            ]
+          }
+        }
+      },
+      "FlightRelations": {
+        "type": "object",
+        "properties": {
+          "equivalentFlightData": {
+            "$ref": "#/components/schemas/FlightData"
+          },
+          "onwardFlightData": {
+            "$ref": "#/components/schemas/FlightData"
+          },
+          "previousFlightData": {
+            "$ref": "#/components/schemas/FlightData"
+          }
+        }
+      },
+      "DelayInformation": {
+        "type": "object",
+        "properties": {
+          "delayCode": {
+            "type": "string"
+          },
+          "delayDuration": {
+            "type": "string"
+          },
+          "delayReason": {
+            "type": "string"
+          },
+          "delayReasonCodePublic": {
+            "type": "string"
+          },
+          "delayReasonPublicLong": {
+            "type": "string"
+          },
+          "delayReasonPublicShort": {
+            "type": "string"
+          },
+          "delaySubCode": {
+            "type": "string"
+          }
+        }
+      },
+      "FlightData": {
+        "type": "object",
+        "properties": {
+          "airlineCode": {
+            "type": "string"
+          },
+          "flightNumber": {
+            "type": "string"
+          },
+          "flightScheduleDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "id": {
+            "type": "string"
+          },
+          "operationalSuffix": {
+            "type": "string"
+          }
+        }
+      },
+      "Country": {
+        "type": "object",
+        "properties": {
+          "areaCode": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "euCountry": {
+            "type": "string"
+          },
+          "euroCountry": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nameLangTranl": {
+            "type": "string"
+          }
+        }
+      },
+      "LegTimes": {
+        "type": "object",
+        "properties": {
+          "actual": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actualTakeOffTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actualTouchDownTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aircraftOnPosition": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "departureSlotTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endOfHandling": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimated": {
+            "$ref": "#/components/schemas/Estimated"
+          },
+          "estimatedArrival": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedInternal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedPublic": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedTakeOffTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedTouchDownTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "latestPublished": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "scheduled": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "targetOffBlock": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "targetStartupApprovalTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Aircraft": {
+        "type": "object",
+        "properties": {
+          "cabinCrewEmployer": {
+            "type": "string"
+          },
+          "cockpitCrewEmployer": {
+            "type": "string"
+          },
+          "operationalConfiguration": {
+            "type": "string"
+          },
+          "ownerAirlineCode": {
+            "type": "string"
+          },
+          "ownerAirlineName": {
+            "type": "string"
+          },
+          "physicalFreightConfiguration": {
+            "type": "string"
+          },
+          "physicalPaxConfiguration": {
+            "type": "string"
+          },
+          "registration": {
+            "type": "string"
+          },
+          "saleableConfiguration": {
+            "type": "string"
+          },
+          "subFleetCodeId": {
+            "type": "string"
+          },
+          "typeCode": {
+            "type": "string"
+          },
+          "typeName": {
+            "type": "string"
+          },
+          "wifiEnabled": {
+            "type": "string"
+          }
+        }
+      },
+      "ArrivalPlaces": {
+        "type": "object",
+        "properties": {
+          "aerogareCode": {
+            "type": "string"
+          },
+          "arrivalHall": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "arrivalPositionPier": {
+            "type": "string"
+          },
+          "arrivalPositionTerminal": {
+            "type": "string"
+          },
+          "arrivalTerminal": {
+            "type": "string"
+          },
+          "baggageBelt": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disembarkingAerogare": {
+            "type": "string"
+          },
+          "disembarkingBusQuantity": {
+            "type": "string"
+          },
+          "disembarkingContactType": {
+            "type": "string"
+          },
+          "firstBagOnBeltTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "flightSecurityLevel": {
+            "type": "string"
+          },
+          "gateNumber": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lastBagOnBeltTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "parkingPosition": {
+            "type": "string"
+          },
+          "parkingPositionCustomStatus": {
+            "type": "string"
+          },
+          "parkingPositionType": {
+            "type": "string"
+          },
+          "pierCode": {
+            "type": "string"
+          },
+          "terminalCode": {
+            "type": "string"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "altitude": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
