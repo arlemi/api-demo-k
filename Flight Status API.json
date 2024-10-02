@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "description": "The Flight Status API provides flight information like: the flight route, per leg the departure and arrival information, airport locations related to the arrival and departure times, information on irregularities (delay, cancellation, etc.)",
-    "version": "v1",
+    "version": "1.0.1",
     "title": "Flight Status API",
     "contact": {}
   },
